@@ -4,9 +4,9 @@ import {
 } from '@material-ui/core';
 import useStyles from '../styles/reception';
 //icons
-import Pin from '../assets/map-location.svg';
-import Clock from '../assets/clock.svg';
-import Calendar from '../assets/calendar.svg';
+import Pin from '../assets/map-location-white.svg';
+import Clock from '../assets/clock-white.svg';
+import Calendar from '../assets/calendar-white.svg';
 
 function AkadNikah() {
   const classes = useStyles();

@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   profileName: {
-    fontSize: '16px',
+    fontSize: '30px',
     fontWeight: 800
   },
   profileKeterangan: {

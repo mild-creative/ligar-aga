@@ -8,11 +8,12 @@ import useStyles from '../styles/content';
 
 import Navbar from './navbar';
 import Quote from './quote';
-import WeddingDetail from './wedding-detail';
-import Reception from './reception';
+// import WeddingDetail from './wedding-detail';
+// import Reception from './reception';
 // import Gallery from './gallery';
-import Comment from './comment';
+// import Comment from './comment';
 // import Countdown from './countdown';
+import DetailReception from './detail-reception';
 
 import VideoRight from '../assets/video1.mp4';
 import VideoLeft from '../assets/video2.mp4';
@@ -47,11 +48,11 @@ function Content({ open }) {
             img={VideoLeft}
           />
         </Container>
-        <WeddingDetail />
-        <Reception />
+        <DetailReception />
+        {/* <WeddingDetail /> */}
+        {/* <Reception /> */}
         {/* <Gallery /> */}
-        <Comment />
-        {/* <Countdown /> */}
+        {/* <Comment /> */}
       {/* </Fade> */}
     </>
   );

@@ -18,7 +18,7 @@ function Quote({ preWord, highlightWord, reverse, quote, img }) {
         </Grid>
       </Grid>
       <Grid item sm={12} md={6} className={clsx(classes.contentCenterer, reverse && classes.imageContainer)}>
-        <video autoPlay loop id={`${preWord}`} style={{ width: '100%'}}>
+        <video controls loop="true" autoplay="autoplay" muted id={`${preWord}`} style={{ width: '100%'}}>
           <source src={img} type="video/mp4" />
         </video>
       </Grid>
