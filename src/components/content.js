@@ -11,7 +11,7 @@ import Quote from './quote';
 // import WeddingDetail from './wedding-detail';
 // import Reception from './reception';
 // import Gallery from './gallery';
-// import Comment from './comment';
+import Comment from './comment';
 // import Countdown from './countdown';
 import DetailReception from './detail-reception';
 
@@ -52,7 +52,7 @@ function Content({ open }) {
         {/* <WeddingDetail /> */}
         {/* <Reception /> */}
         {/* <Gallery /> */}
-        {/* <Comment /> */}
+        <Comment />
       {/* </Fade> */}
     </>
   );

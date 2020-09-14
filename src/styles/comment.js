@@ -3,8 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   guestBook: {
     fontFamily: `'Satisfy', cursive`,
-    fontSize: '25px',
-    marginBottom: '1rem'
+    fontSize: '35px',
+    marginBottom: '1rem',
+    marginTop: '2.5rem'
   },
   button: {
     boxShadow: '2px 2px grey'
