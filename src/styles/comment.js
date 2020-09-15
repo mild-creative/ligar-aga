@@ -11,7 +11,8 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '2.5rem'
   },
   button: {
-    boxShadow: '2px 2px grey'
+    boxShadow: '2px 2px grey',
+    width: '200px'
   },
   formWrapper: {
     marginBottom: '2rem',

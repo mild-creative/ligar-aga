@@ -9,9 +9,9 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFFFFF',
     backgroundColor: '#000000',
     fontSize: 12,
-    [theme.breakpoints.down('xs')]: {
-      marginBottom: '4rem'
-    }
+    // [theme.breakpoints.down('xs')]: {
+    //   marginBottom: '4rem'
+    // }
   }
 }));
 

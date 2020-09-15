@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   spousesName: {
     fontFamily: `'Halimun', cursive`,
-    fontSize: '100px'
+    fontSize: '60px'
   },
   bismillah: {
     fontFamily: `'Halimun', cursive`,
@@ -27,8 +27,7 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: '50%',
       border: '2px solid white',
       width: 240,
-      '&::-webkit-height': 'intrinsic',
-      // -webkit-height: intrinsic
+      height: 'intrinsic',
       [theme.breakpoints.down('sm')]: {
         width: '200px'
       },
