@@ -1,6 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    marginBottom: '3.5rem'
+  },
   guestBook: {
     fontFamily: `'Satisfy', cursive`,
     fontSize: '35px',
@@ -13,7 +16,10 @@ const useStyles = makeStyles((theme) => ({
   formWrapper: {
     marginBottom: '2rem',
     '& input, textarea': {
-      width: 300
+      width: 300,
+      [theme.breakpoints.down('xs')]: {
+        width: '75vw'
+      }
     },
     '& div': {
       marginBottom: '.4rem'

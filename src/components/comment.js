@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import {
   Container,
-  Typography
+  Typography,
+  Snackbar
 } from '@material-ui/core';
 
 import GuestForm from './guest-form';
@@ -23,7 +24,7 @@ function Comment() {
   }
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" className={classes.container}>
       <Typography className={classes.guestBook}>Guest Book</Typography>
       <GuestForm />
       <hr />

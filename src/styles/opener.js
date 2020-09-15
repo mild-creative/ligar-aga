@@ -53,6 +53,11 @@ const useStyles = makeStyles(() => ({
     '& .MuiToolbar-dense': {
       height: '100%'
     }
+  },
+  brandName: {
+    color: '#000000',
+    fontFamily: `'Satisfy', cursive`,
+    paddingLeft: '1.5rem'
   }
 }))
 

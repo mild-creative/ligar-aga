@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: '50%',
       border: '2px solid white',
       width: 240,
+      '&::-webkit-height': 'intrinsic',
+      // -webkit-height: intrinsic
       [theme.breakpoints.down('sm')]: {
         width: '200px'
       },
@@ -47,7 +49,10 @@ const useStyles = makeStyles((theme) => ({
   },
   profileName: {
     fontSize: '30px',
-    fontWeight: 800
+    fontWeight: 800,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '22px',
+    }
   },
   profileKeterangan: {
     fontSize: '12px',

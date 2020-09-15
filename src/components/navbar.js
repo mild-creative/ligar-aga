@@ -11,10 +11,10 @@ function Navbar() {
 
   return (
     <AppBar position="static" className={classes.appbar}>
-      <Hidden mdUp>
-        <p style={{color: 'black'}}>Ligar | Aga</p>
+      <Hidden smUp>
+        <p className={classes.brandName}>{`Ligar & Aga`}</p>
       </Hidden>
-      <Hidden smDown>
+      <Hidden xsDown>
         <Toolbar variant="dense">
           {navbarMenu.map(menu => (
             <Typography key={menu.name} variant="h6" color="inherit">

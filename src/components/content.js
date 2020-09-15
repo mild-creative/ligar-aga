@@ -2,7 +2,8 @@ import React from 'react';
 import {
   Fade,
   Container,
-  useMediaQuery
+  useMediaQuery,
+  Hidden
 } from '@material-ui/core';
 import useStyles from '../styles/content';
 
@@ -14,6 +15,8 @@ import Quote from './quote';
 import Comment from './comment';
 // import Countdown from './countdown';
 import DetailReception from './detail-reception';
+import BottomNav from './bottom-nav';
+import Footer from './footer';
 
 import VideoRight from '../assets/video1.mp4';
 import VideoLeft from '../assets/video2.mp4';
@@ -53,6 +56,10 @@ function Content({ open }) {
         {/* <Reception /> */}
         {/* <Gallery /> */}
         <Comment />
+        <Hidden smUp>
+          <BottomNav />
+        </Hidden>
+        <Footer />
       {/* </Fade> */}
     </>
   );
