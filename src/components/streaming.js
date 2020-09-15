@@ -7,9 +7,13 @@ import useStyles from '../styles/streaming';
 
 function Streaming() {
   const classes = useStyles();
-  return(
+  return (
     <Container maxWidth="md" className={classes.container}>
-      <iframe title="Live Streaming" width="100%" src="https://www.youtube.com/embed/1bxUeJ6ThsM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+      <div style={{textAlign:'center'}}>
+      <Typography className={classes.profileName}>Live Streaming</Typography>
+      </div>
+      <br></br>
+      <iframe title="Live Streaming" width="100%" src="https://www.youtube.com/embed/YPsttPQKoVU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
       <Typography className={classes.instaAccount}>
         <InstagramIcon />
         <a href="https://www.instagram.com/hamishdw/" target="_blank" rel="noopener noreferrer">Aga</a>
@@ -21,5 +25,4 @@ function Streaming() {
     </Container>
   );
 }
-
 export default Streaming;

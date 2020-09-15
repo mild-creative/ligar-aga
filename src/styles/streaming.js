@@ -26,7 +26,13 @@ const useStyles = makeStyles((theme) => ({
     '& a:hover': {
       color: '#F0F0F0'
     }
-  }
+  },
+  profileName: {
+    fontFamily: `'Satisfy', cursive`,
+    fontSize: '35px',
+    marginBottom: '1rem',
+    marginTop: '2.5rem'
+  },
 }))
 
 export default useStyles;
