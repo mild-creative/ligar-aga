@@ -9,14 +9,17 @@ function GuestForm() {
   const classes = useStyles();
   const inputRef = useRef(null);
   const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+  const [whoAmI, setWhoAmI] = useState('');
   const [msg, setMsg] = useState('');
 
   const handleSubmit = async () => {
     console.log('submitted');
     const submitted = await postComments({
-      name, email, msg
+      name, whoAmI, msg
     });
+    setName('');
+    setWhoAmI('');
+    setMsg('');
     console.log(submitted, 'success')
   }
 
@@ -26,8 +29,8 @@ function GuestForm() {
       case 'name':
         setName(value);
         break;
-      case 'email':
-        setEmail(value);
+      case 'whoAmI':
+        setWhoAmI(value);
         break;
       case 'msg':
         setMsg(value);
@@ -59,15 +62,15 @@ function GuestForm() {
       </div>
       <div>
         <TextValidator
-          label="Guest Email"
-          id="email"
+          label="Who Am I"
+          id="whoAmI"
           size="small"
-          type="email"
+          type="text"
           variant="outlined"
-          value={email}
+          value={whoAmI}
           onChange={handleChange}
-          validators={['required', 'isEmail']}
-          errorMessages={['Email field is required', 'Email is not valid']}
+          validators={['required']}
+          errorMessages={['Who Am I field is required']}
         />
       </div>
       <div>
