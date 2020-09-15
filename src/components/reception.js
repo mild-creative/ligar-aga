@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import moment from 'moment-timezone';
 import {
   useMediaQuery
 } from '@material-ui/core';
@@ -7,7 +8,8 @@ import Desktop from './reception-desktop';
 import Mobile from './reception-mobile';
 
 const calculateTimeLeft = () => {
-  const difference = +new Date("2020-10-04") - +new Date();
+  // const difference = +new Date("2020-10-04") - +new Date();
+  const difference = +moment('2020-10-04 08:00').tz('Asia/Jakarta') - +moment().tz('Asia/Jakarta')
   let timeLeft = {};
 
   if (difference > 0) {
