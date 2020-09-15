@@ -9,17 +9,16 @@ import useStyles from '../styles/content';
 
 import Navbar from './navbar';
 import Quote from './quote';
-// import WeddingDetail from './wedding-detail';
-// import Reception from './reception';
 // import Gallery from './gallery';
 import Comment from './comment';
 // import Countdown from './countdown';
 import DetailReception from './detail-reception';
-import BottomNav from './bottom-nav';
+// import BottomNav from './bottom-nav';
 import Footer from './footer';
 
-import VideoRight from '../assets/video1.mp4';
+import VideoRight from '../assets/right-video.mp4';
 import VideoLeft from '../assets/video2.mp4';
+import BannerVideo from '../assets/banner.mp4';
 
 function Content({ open }) {
   const classes = useStyles();
@@ -29,23 +28,20 @@ function Content({ open }) {
     <>
       <Navbar />
       {/* <Fade in={open} timeout={2000}> */}
-      <img
+      {/* <img
         src="https://images.pexels.com/photos/4307920/pexels-photo-4307920.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         alt="banner"
         className={classes.banner}
-      />
+      /> */}
+      <video id="banner"  width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video>
       <Container className={classes.outerQuoteContainer} maxWidth={matches ? 'lg' : false}>
         <Quote
           preWord="The"
           highlightWord="Highest"
           quote="Happiness On earth"
         // img="https://images.pexels.com/photos/916344/pexels-photo-916344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        // img={VideoRight}
-        >
-          <video loop="true" autoplay="autoplay" muted id="The" style={{ width: '100%' }}>
-            <source src={VideoRight} type="video/mp4" />
-          </video>
-        </Quote>
+          img={VideoRight}
+        />
         <Quote
           reverse={true}
           preWord="Is The"
@@ -56,8 +52,6 @@ function Content({ open }) {
         />
       </Container>
       <DetailReception />
-      {/* <WeddingDetail /> */}
-      {/* <Reception /> */}
       {/* <Gallery /> */}
       <Comment />
       {/* <Hidden smUp>
