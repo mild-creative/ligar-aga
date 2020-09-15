@@ -3,6 +3,7 @@ import {
   Container,
   Typography
 } from '@material-ui/core';
+import Pagination from '@material-ui/lab/Pagination';
 
 import GuestForm from './guest-form';
 import useStyles from '../styles/comment';
@@ -15,6 +16,7 @@ function Comment() {
   const [loadingSubmit, setLoading] = useState(false);
   const [alertOpen, setAlertOpen] = useState(false);
   const [fetchLoading, setFetchLoading] = useState(false);
+  const [commentPage, setPage] = useState(1);
   const [name, setName] = useState('');
   const [whoAmI, setWhoAmI] = useState('');
   const [msg, setMsg] = useState('');
@@ -61,14 +63,19 @@ function Comment() {
     setMsg('');
   }
 
-  const fetchComments = async () => {
+  const fetchComments = async (showPage) => {
     setFetchLoading(true);
     try {
-      const allComments = await getComments();
+      const allComments = await getComments(showPage);
       setComments(allComments?.comment);
     } finally {
       setFetchLoading(false);
     }
+  }
+
+  const onChangePage = (_, page) => {
+    setPage(page);
+    fetchComments(page);
   }
 
   return (
@@ -96,6 +103,13 @@ function Comment() {
           <hr />
         </div>
       ))}
+      <Pagination
+        count={5}
+        variant="outlined"
+        defaultPage={1}
+        page={commentPage}
+        onChange={onChangePage}
+      />
     </Container>
   );
 }
