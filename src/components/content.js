@@ -20,6 +20,7 @@ import Streaming from './streaming';
 import VideoRight from '../assets/right-video.mp4';
 import VideoLeft from '../assets/video2.mp4';
 import BannerVideo from '../assets/banner.mp4';
+import Poster from '../assets/LA-icon.png';
 
 function Content({ open }) {
   const classes = useStyles();
@@ -34,7 +35,7 @@ function Content({ open }) {
         alt="banner"
         className={classes.banner}
       /> */}
-      <video id="banner"  width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video>
+      <video poster={Poster} id="banner"  width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video>
       <Container className={classes.outerQuoteContainer} maxWidth={matches ? 'lg' : false}>
         <Quote
           preWord="The"

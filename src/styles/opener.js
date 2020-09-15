@@ -28,6 +28,10 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     [theme.breakpoints.down('sm')]: {
       marginBottom: '3.5rem'
+    },
+    [theme.breakpoints.down('xs')]: {
+      paddingTop: '15rem',
+      paddingBottom: '3.5rem'
     }
   },
   buttonOpen: {
