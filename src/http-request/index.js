@@ -11,10 +11,8 @@ export const getComments = (page = 1) => {
 }
 
 export const postComments = (data) => {
-  console.log(data, 'data')
   return api().post('/comment', data)
     .then(({ data }) => {
-      console.log(data, 'posted')
       return data;
     })
     .catch((err) => {

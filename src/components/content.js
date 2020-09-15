@@ -15,6 +15,7 @@ import Comment from './comment';
 import DetailReception from './detail-reception';
 // import BottomNav from './bottom-nav';
 import Footer from './footer';
+import Streaming from './streaming';
 
 import VideoRight from '../assets/right-video.mp4';
 import VideoLeft from '../assets/video2.mp4';
@@ -53,6 +54,7 @@ function Content({ open }) {
       </Container>
       <DetailReception />
       {/* <Gallery /> */}
+      <Streaming />
       <Comment />
       {/* <Hidden smUp>
         <BottomNav />
