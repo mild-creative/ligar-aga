@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '3.5rem'
   },
   saveTheDate: {
-    fontFamily: `'Satisfy', cursive`,
+    fontFamily: `'Halimun', cursive`,
     fontSize: '60px',
     [theme.breakpoints.down('sm')]: {
       fontSize: '40px'

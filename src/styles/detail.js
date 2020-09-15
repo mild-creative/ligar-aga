@@ -13,11 +13,11 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '2rem'
   },
   spousesName: {
-    fontFamily: `'Satisfy', cursive`,
+    fontFamily: `'Halimun', cursive`,
     fontSize: '100px'
   },
   bismillah: {
-    fontFamily: `'Satisfy', cursive`,
+    fontFamily: `'Halimun', cursive`,
     fontSize: '25px'
   },
   profileGrid: {

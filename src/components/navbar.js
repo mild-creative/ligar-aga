@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <AppBar color="default" position="static" className={classes.appbar}>
       <Toolbar variant="dense">
-        <Typography align="center" className={classes.brandName}>{`Ligar | Aga`}</Typography>
+        <Typography align="center" className={classes.brandName}>{`Ligar & Aga`}</Typography>
       </Toolbar>
       {/* <Hidden xsDown>
         <Toolbar variant="dense">

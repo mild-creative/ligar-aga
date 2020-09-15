@@ -1,12 +1,18 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   brand: {
-    letterSpacing: '2px'
+    letterSpacing: '2px',
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '3.5rem'
+    }
   },
   couplesName: {
-    fontFamily: `'Satisfy', cursive`,
-    fontSize: '50px'
+    fontFamily: `'Halimun', cursive`,
+    fontSize: '40px',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '28px'
+    }
   },
   openerWrapper: {
     display: 'flex',
@@ -14,19 +20,21 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     height: '100vh',
     width: '100vw',
-
     "& p": {
-      marginBottom: '3rem'
+      marginBottom: '2rem'
     }
   },
   containerOpener: {
-    textAlign: 'center'
+    textAlign: 'center',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '3.5rem'
+    }
   },
   buttonOpen: {
     backgroundColor: '#010101',
     color: '#FFFFFF',
     transition: 'opacity 1.5s',
-    width: '35%',
+    width: '55%',
     textTransform: 'none',
     height: '40px',
     fontSize: '16px',
@@ -58,7 +66,7 @@ const useStyles = makeStyles(() => ({
   },
   brandName: {
     color: '#000000',
-    fontFamily: `'Satisfy', cursive`,
+    fontFamily: `'Halimun', cursive`,
     fontSize: '20px'
   }
 }))

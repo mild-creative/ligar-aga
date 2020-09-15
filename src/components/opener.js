@@ -17,7 +17,13 @@ function Opener({ handleClick }) {
           {opener.brand}
         </Typography>
         <Typography className={classes.couplesName}>
-          {`${opener.bride} & ${opener.groom}`}
+          {`${opener.bride}`}
+        </Typography>
+        <Typography className={classes.couplesName}>
+          {`&`}
+        </Typography>
+        <Typography className={classes.couplesName}>
+          {`${opener.groom}`}
         </Typography>
         <Typography>
           {opener.description}
