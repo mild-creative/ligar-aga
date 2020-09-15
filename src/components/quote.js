@@ -22,10 +22,11 @@ function Quote({ preWord, highlightWord, reverse, quote, img, children }) {
         {/* <video loop="true" autoplay="autoplay" muted id={`${preWord}`} style={{ width: '100%'}}>
           <source src={img} type="video/mp4" />
         </video> */}
-        {children && children}
+        <video id={`${preWord}`}  width="100%" height="100%" loop autoPlay='autoplay' muted src={img} playsInline webkit-playsInline></video>
+        {/* {children && children}
         {!children && (
           <ReactPlayer url={img} playing={true} loop={true} width="100%" />
-        )}
+        )} */}
       </Grid>
         {/* <Grid item sm={12} md={6} className={reverse && classes.imageContainer}>
         <img
