@@ -10,11 +10,11 @@ function Navbar() {
   const classes = useStyles();
 
   return (
-    <AppBar position="static" className={classes.appbar}>
-      <Hidden smUp>
-        <p className={classes.brandName}>{`Ligar & Aga`}</p>
-      </Hidden>
-      <Hidden xsDown>
+    <AppBar color="default" position="static" className={classes.appbar}>
+      <Toolbar variant="dense">
+        <Typography align="center" className={classes.brandName}>{`Ligar | Aga`}</Typography>
+      </Toolbar>
+      {/* <Hidden xsDown>
         <Toolbar variant="dense">
           {navbarMenu.map(menu => (
             <Typography key={menu.name} variant="h6" color="inherit">
@@ -22,7 +22,7 @@ function Navbar() {
             </Typography>
           ))}
         </Toolbar>
-      </Hidden>
+      </Hidden> */}
     </AppBar>
   );
 }

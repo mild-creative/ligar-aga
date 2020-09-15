@@ -51,13 +51,15 @@ const useStyles = makeStyles(() => ({
       opacity: '0.5'
     },
     '& .MuiToolbar-dense': {
-      height: '100%'
+      height: '100%',
+      display: 'flex',
+      justifyContent: 'center'
     }
   },
   brandName: {
     color: '#000000',
     fontFamily: `'Satisfy', cursive`,
-    paddingLeft: '1.5rem'
+    fontSize: '20px'
   }
 }))
 

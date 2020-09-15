@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import {
-  BottomNavigation,
-  BottomNavigationAction,
-  Popper,
+  // Popper,
   Fab,
-  IconButton,
   Toolbar,
   AppBar,
   Typography
@@ -30,15 +27,12 @@ function BottomNav() {
           <Fab color="secondary" aria-label="love" className={classes.fabButton} onClick={handleClick}>
             <FavoriteIcon />
           </Fab>
-          {/* <IconButton color="secondary" aria-label="open drawer" onClick={handleClick} className={classes.loveContainer}>
-            <FavoriteIcon />
-          </IconButton> */}
         </Toolbar>
-        <Popper open={open} id="popper-click" anchorEl={anchorEl} placement="top" className={classes.popper}>
+        {/* <Popper open={open} id="popper-click" anchorEl={anchorEl} placement="top" className={classes.popper}>
           {navbarMenu.map(menu => (
             <Typography key={menu.name}>{menu.name}</Typography>
           ))}
-        </Popper>
+        </Popper> */}
       </AppBar>
     </>
   );

@@ -17,8 +17,10 @@ const useStyles = makeStyles((theme) => ({
   container: {
     paddingTop: '2.5rem',
     paddingBottom: '2.5rem',
-    backgroundImage: 'linear-gradient(to bottom, rgba(209, 179, 101, 1), rgba(93, 72, 16, 1))',
-    color: '#FFFFFF'
+    // backgroundImage: 'linear-gradient(to bottom, rgba(209, 179, 101, 1), rgba(93, 72, 16, 1))',
+    backgroundImage: 'linear-gradient(to bottom, rgb(234, 230, 225), rgb(202, 194, 192))',
+    // backgroundImage: 'rgb(234, 230, 225)',
+    // color: '#FFFFFF'
   }
 }));
 
