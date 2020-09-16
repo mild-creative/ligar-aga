@@ -16,6 +16,7 @@ import DetailReception from './detail-reception';
 // import BottomNav from './bottom-nav';
 import Footer from './footer';
 import Streaming from './streaming';
+import Gallery from './guest-gallery';
 
 import VideoRight from '../assets/right-video.mp4';
 import VideoLeft from '../assets/video2.mp4';
@@ -57,6 +58,7 @@ function Content({ open }) {
       {/* <Gallery /> */}
       <Streaming />
       <Comment />
+      <Gallery />
       {/* <Hidden smUp>
         <BottomNav />
       </Hidden> */}
