@@ -7,7 +7,7 @@ import {
 import useStyles from '../styles/detail';
 
 import Groom from '../assets/groom.png';
-import Bride from '../assets/bride.png';
+import Bride from '../assets/ligar-bride.png';
 
 function WeddingDetail() {
   const classes = useStyles();

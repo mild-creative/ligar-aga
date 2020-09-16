@@ -1,0 +1,26 @@
+.social-nav li img {
+	width: 85px;
+	height: 85px;
+	cursor: pointer;
+}
+
+.model-0 {
+	z-index: 7777;
+	position: fixed;
+	right: 10px;
+	bottom: 10%;
+}
+
+.model-0 li {
+	float: none;
+	display: block;
+}
+
+@media only screen and (max-width: 380px) {
+	.model-0 {
+		z-index: 7777;
+		position: fixed;
+		right: 10px;
+		bottom: 0;
+	}
+}
