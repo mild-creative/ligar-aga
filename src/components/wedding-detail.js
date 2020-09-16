@@ -27,7 +27,7 @@ function WeddingDetail() {
           <Grid item xs={7} md={7}>
             <Typography className={classes.profileName}>Ligar Eka Prasta</Typography>
             <Typography className={classes.profileKeterangan}>Putri Pertama dari</Typography>
-            <Typography>Bapak Sutani</Typography>
+            <Typography>Bapak Sutari</Typography>
             <Typography>{`& Ibu Aas Hayati`}</Typography>
           </Grid>
         </Grid>
