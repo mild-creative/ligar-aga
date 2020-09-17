@@ -80,9 +80,19 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '20px'
   },
   theWedding: {
-    letterSpacing: '3px',
+    letterSpacing: '15px',
     fontSize: '15px',
     marginTop: '-20px'
+  },
+  videoBackground: {
+    objectFit: 'cover',
+    width: '100%',
+    height: '100vh',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    zIndex: -1,
+    opacity: 0.4
   }
 }))
 
