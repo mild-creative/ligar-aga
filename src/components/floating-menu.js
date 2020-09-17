@@ -7,7 +7,7 @@ function FloatingMenu({ mute, setMute }) {
   
   return (
 		<ul className="social-nav model-0" id="model-0">
-			<li><img src={mute ? Unmute : Mute} alt="Mute Icon" onClick={() => setMute(() => !mute)} /></li>
+			<li><img src={!mute ? Unmute : Mute} alt="Mute Icon" onClick={() => setMute(() => !mute)} /></li>
 		</ul>
   );
 }

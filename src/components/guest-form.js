@@ -10,7 +10,17 @@ function Alert(props) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-function GuestForm({ handleSubmit, loadingSubmit, setAlertOpen, msg, alertOpen, handleChange, name, whoAmI }) {
+function GuestForm({
+  handleSubmit,
+  loadingSubmit,
+  setAlertOpen,
+  msg,
+  alertOpen,
+  handleChange,
+  name,
+  whoAmI,
+  upload
+}) {
   const classes = useStyles();
   const inputRef = useRef(null);
 
@@ -55,52 +65,70 @@ function GuestForm({ handleSubmit, loadingSubmit, setAlertOpen, msg, alertOpen, 
       onError={errors => console.log(errors)}
       className={classes.formWrapper}
     >
-      <div>
-        <TextValidator
-          label="Guest Name"
-          id="name"
-          size="small"
-          type="text"
-          variant="outlined"
-          value={name}
-          onChange={handleChange}
-          validators={['required', 'nameChars']}
-          errorMessages={['Name field is required', 'Name fields should not be more than 20 characters']}
-        />
-      </div>
-      <div>
-        <TextValidator
-          label="Who Am I"
-          id="whoAmI"
-          size="small"
-          type="text"
-          variant="outlined"
-          value={whoAmI}
-          onChange={handleChange}
-          validators={['required', 'whoamiChars']}
-          errorMessages={['Who Am I field is required', 'WhoAmI field should not be more than 20 characters']}
-        />
-      </div>
-      <div>
-        <TextValidator
-          label="Message"
-          id="msg"
-          size="small"
-          type="text"
-          multiline={true}
-          variant="outlined"
-          value={msg}
-          onChange={handleChange}
-          validators={['required', 'msgChars']}
-          errorMessages={['Message field is required', 'Message should be less than 160 characters']}
-        />
-      </div>
+      {!upload && (
+        <>
+          <div>
+            <TextValidator
+              label="Guest Name"
+              id="name"
+              size="small"
+              type="text"
+              variant="outlined"
+              value={name}
+              onChange={handleChange}
+              validators={['required', 'nameChars']}
+              errorMessages={['Name field is required', 'Name fields should not be more than 20 characters']}
+            />
+          </div>
+          <div>
+            <TextValidator
+              label="Who Am I"
+              id="whoAmI"
+              size="small"
+              type="text"
+              variant="outlined"
+              value={whoAmI}
+              onChange={handleChange}
+              validators={['required', 'whoamiChars']}
+              errorMessages={['Who Am I field is required', 'WhoAmI field should not be more than 20 characters']}
+            />
+          </div>
+          <div>
+            <TextValidator
+              label="Message"
+              id="msg"
+              size="small"
+              type="text"
+              multiline={true}
+              variant="outlined"
+              value={msg}
+              onChange={handleChange}
+              validators={['required', 'msgChars']}
+              errorMessages={['Message field is required', 'Message should be less than 160 characters']}
+            />
+          </div>
+        </>
+      )}
+      {upload && (
+        <div>
+          <TextValidator
+            id="name"
+            size="small"
+            type="file"
+            variant="outlined"
+            value={name}
+            onChange={(e) => { handleChange(e) }}
+            validators={['required']}
+            errorMessages={['File field is required']}
+          />
+        </div>
+      )}
       <Button disabled={loadingSubmit} type="submit" variant="outlined" className={classes.button}>
         {loadingSubmit ? 'Submitting Form ...' : 'Submit'}
       </Button>
       <Snackbar open={alertOpen} autoHideDuration={4000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
-          Success submit comment
+          {upload ? `Upload success` : `Success submit comment`}
         </Alert>
       </Snackbar>
     </ValidatorForm>

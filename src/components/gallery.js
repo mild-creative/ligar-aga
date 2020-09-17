@@ -6,7 +6,8 @@ import {
 } from '@material-ui/core';
 import Pagination from '@material-ui/lab/Pagination';
 
-import GuestForm from './input-form';
+// import GuestForm from './input-form';
+import GuestForm from './guest-form';
 import { getGallery, postGallery } from '../http-request';
 import useStyles from '../styles/gallery';
 
@@ -78,6 +79,7 @@ function Gallery() {
         alertOpen={alertOpen}
         handleChange={handleChange}
         name={guestFile}
+        upload={true}
       />
       <Grid container className={classes.galleryContainer}>
         {gallery.map(content => (
