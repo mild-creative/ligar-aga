@@ -1,8 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  brand: {
+  top: {
     letterSpacing: '2px',
+    color: 'rgba(0, 0, 0, 0.5)',
     [theme.breakpoints.down('sm')]: {
       marginTop: '3.5rem'
     }
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '3.5rem'
     },
     [theme.breakpoints.down('xs')]: {
-      paddingTop: '15rem',
+      paddingTop: '25rem',
       paddingBottom: '3.5rem'
     }
   },
@@ -42,15 +43,20 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'none',
     height: '40px',
     fontSize: '16px',
+    marginBottom: '4rem',
 
     '&:hover': {
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
       color: '#FFFFFF'
     }
   },
+  brand: {
+    letterSpacing: '1.5px',
+    color: 'rgba(0, 0, 0, 0.5)'
+  },
   appbar: {
     backgroundColor: '#FFFFFF',
-    height: '60px',
+    height: '80px',
 
     '& h6': {
       color: 'rgba(1,1,1,0.8)',
@@ -72,6 +78,11 @@ const useStyles = makeStyles((theme) => ({
     color: '#000000',
     fontFamily: `'Halimun', cursive`,
     fontSize: '20px'
+  },
+  theWedding: {
+    letterSpacing: '3px',
+    fontSize: '15px',
+    marginTop: '-20px'
   }
 }))
 

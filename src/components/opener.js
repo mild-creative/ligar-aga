@@ -13,8 +13,8 @@ function Opener({ handleClick }) {
   return (
     <div className={classes.openerWrapper}>
       <Container maxWidth="md" className={classes.containerOpener}>
-        <Typography className={classes.brand}>
-          {opener.brand}
+        <Typography className={classes.top}>
+          {opener.top}
         </Typography>
         <Typography className={classes.couplesName}>
           {`${opener.bride}`}
@@ -31,6 +31,9 @@ function Opener({ handleClick }) {
         <Button onClick={handleClick} className={classes.buttonOpen}>
           Buka
         </Button>
+        <Typography className={classes.brand}>
+          {opener.brand}
+        </Typography>
       </Container>
     </div>
   )
