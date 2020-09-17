@@ -1,6 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    marginBottom: '3.5rem'
+  },
   galleryContainer: {
     marginBottom: '3rem',
     '& div': {
@@ -18,7 +21,13 @@ const useStyles = makeStyles((theme) => ({
       transform: 'scale(1.05)',
       // filter: 'grayscale(0)'
     }
-  }
+  },
+  guestBook: {
+    fontFamily: `'Satisfy', cursive`,
+    fontSize: '35px',
+    marginBottom: '1rem',
+    marginTop: '2.5rem'
+  },
 }));
 
 export default useStyles;

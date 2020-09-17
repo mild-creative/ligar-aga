@@ -10,12 +10,12 @@ import useStyles from '../styles/content';
 
 import Navbar from './navbar';
 import Quote from './quote';
-// import Gallery from './gallery';
+import Gallery from './gallery';
 import Comment from './comment';
 import DetailReception from './detail-reception';
 import Footer from './footer';
 import Streaming from './streaming';
-import Gallery from './guest-gallery';
+// import Gallery from './guest-gallery';
 import FloatingButton from './floating-menu';
 
 import VideoRight from '../assets/right-video.mp4';
@@ -43,18 +43,12 @@ function Content({ open }) {
         setMute={setMute}
       />
       {/* <Fade in={open} timeout={2000}> */}
-      {/* <img
-        src="https://images.pexels.com/photos/4307920/pexels-photo-4307920.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        alt="banner"
-        className={classes.banner}
-      /> */}
       <video poster={Poster} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video>
       <Container className={classes.outerQuoteContainer} maxWidth={matches ? 'lg' : false}>
         <Quote
           preWord="The"
           highlightWord="Highest"
           quote="Happiness On earth"
-          // img="https://images.pexels.com/photos/916344/pexels-photo-916344.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           img={VideoRight}
         />
         <Quote
@@ -62,15 +56,13 @@ function Content({ open }) {
           preWord="Is The"
           highlightWord="Happines"
           quote="Of Marriage"
-          // img="https://images.pexels.com/photos/1161372/pexels-photo-1161372.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
           img={VideoLeft}
         />
       </Container>
       <DetailReception />
-      {/* <Gallery /> */}
       <Streaming />
       <Comment />
-      {/* <Gallery /> */}
+      <Gallery />
       {/* <Hidden smUp>
         <BottomNav />
       </Hidden> */}

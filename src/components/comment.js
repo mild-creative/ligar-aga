@@ -13,6 +13,7 @@ import { getComments, postComments } from '../http-request';
 function Comment() {
   const classes = useStyles();
   const [comments, setComments] = useState([]);
+  const [count, setCount] = useState(1);
   const [loadingSubmit, setLoading] = useState(false);
   const [alertOpen, setAlertOpen] = useState(false);
   const [fetchLoading, setFetchLoading] = useState(false);
@@ -67,6 +68,7 @@ function Comment() {
     setFetchLoading(true);
     try {
       const allComments = await getComments(showPage);
+      setCount(Math.ceil(allComments?.length / 10));
       setComments(allComments?.comment);
     } finally {
       setFetchLoading(false);
@@ -104,7 +106,7 @@ function Comment() {
         </div>
       ))}
       <Pagination
-        count={5}
+        count={count}
         variant="outlined"
         defaultPage={1}
         page={commentPage}

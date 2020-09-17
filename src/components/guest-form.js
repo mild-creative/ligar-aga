@@ -23,6 +23,24 @@ function GuestForm({ handleSubmit, loadingSubmit, setAlertOpen, msg, alertOpen, 
     });
   }, [msg]);
 
+  useEffect(() => {
+    ValidatorForm.addValidationRule('nameChars', (value) => {
+      if (value.length > 20) {
+        return false;
+      }
+      return true;
+    });
+  }, [name]);
+
+  useEffect(() => {
+    ValidatorForm.addValidationRule('whoamiChars', (value) => {
+      if (value.length > 20) {
+        return false;
+      }
+      return true;
+    });
+  }, [whoAmI]);
+
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
@@ -46,8 +64,8 @@ function GuestForm({ handleSubmit, loadingSubmit, setAlertOpen, msg, alertOpen, 
           variant="outlined"
           value={name}
           onChange={handleChange}
-          validators={['required']}
-          errorMessages={['Name field is required']}
+          validators={['required', 'nameChars']}
+          errorMessages={['Name field is required', 'Name fields should not be more than 20 characters']}
         />
       </div>
       <div>
@@ -59,8 +77,8 @@ function GuestForm({ handleSubmit, loadingSubmit, setAlertOpen, msg, alertOpen, 
           variant="outlined"
           value={whoAmI}
           onChange={handleChange}
-          validators={['required']}
-          errorMessages={['Who Am I field is required']}
+          validators={['required', 'whoamiChars']}
+          errorMessages={['Who Am I field is required', 'WhoAmI field should not be more than 20 characters']}
         />
       </div>
       <div>
@@ -73,7 +91,7 @@ function GuestForm({ handleSubmit, loadingSubmit, setAlertOpen, msg, alertOpen, 
           variant="outlined"
           value={msg}
           onChange={handleChange}
-          validators={['required', ['msgChars']]}
+          validators={['required', 'msgChars']}
           errorMessages={['Message field is required', 'Message should be less than 160 characters']}
         />
       </div>
