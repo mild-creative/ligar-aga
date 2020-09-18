@@ -32,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
         width: '200px'
       },
       [theme.breakpoints.down('xs')]: {
-        width: '105px'
+        width: '105px',
+        height: '105px'
       }
     }
   },
@@ -45,13 +46,13 @@ const useStyles = makeStyles((theme) => ({
       }
     }
   },
-  leftImage: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    [theme.breakpoints.down('xs')]: {
-      justifyContent: 'center'
-    }
-  },
+  // leftImage: {
+  //   display: 'flex',
+  //   justifyContent: 'flex-end',
+  //   [theme.breakpoints.down('xs')]: {
+  //     justifyContent: 'center'
+  //   }
+  // },
   profileName: {
     fontSize: '30px',
     fontWeight: 800,
@@ -63,23 +64,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '12px',
     fontWeight: 800,
     lineHeight: 3
-  },
-  // image nyoba
-  profileGridNyoba: {
-    marginTop: '2rem',
-    marginBottom: '2rem',
-    '& img': {
-      borderRadius: '50%',
-      border: '2px solid white',
-      width: 240,
-      height: 'intrinsic',
-      [theme.breakpoints.down('sm')]: {
-        width: '200px'
-      },
-      [theme.breakpoints.down('xs')]: {
-        width: '100%'
-      }
-    }
   }
 }));
 
