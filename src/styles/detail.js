@@ -40,10 +40,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'flex-end',
     [theme.breakpoints.down('xs')]: {
-      justifyContent: 'flex-start',
       '& div': {
         width: '100%'
-      }
+      },
+      // '& img': {
+      //   width: '100%'
+      // }
     }
   },
   profileName: {
