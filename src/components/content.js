@@ -6,6 +6,7 @@ import {
   // Hidden
 } from '@material-ui/core';
 import ReactAudioPlayer from 'react-audio-player';
+import Skeleton from '@material-ui/lab/Skeleton';
 import useStyles from '../styles/content';
 
 import Navbar from './navbar';
@@ -21,13 +22,20 @@ import FloatingButton from './floating-menu';
 import VideoRight from '../assets/right-video.mp4';
 import VideoLeft from '../assets/video-left.mp4';
 import BannerVideo from '../assets/banner.mp4';
-import Poster from '../assets/LA-icon.png';
+// import Poster from '../assets/LA-icon.png';
 import Backsound from '../assets/BACKSOUND_PREWED_AGA.mp3';
 
 function Content({ open }) {
-  const classes = useStyles();
   const matches = useMediaQuery(theme => theme.breakpoints.up('md'));
   const [mute, setMute] = React.useState(false);
+  const [loaded, setLoaded] = React.useState(false);
+  const classes = useStyles({
+    loaded
+  });
+
+  const onLoaded = () => {
+    setLoaded(true);
+  }
 
   return (
     <>
@@ -43,7 +51,8 @@ function Content({ open }) {
         setMute={setMute}
       />
       {/* <Fade in={open} timeout={2000}> */}
-      <video poster={Poster} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video>
+      <Skeleton variant="rect" animation="wave" className={classes.bannerLoader} />
+      <video className={classes.banner} onLoadedData={onLoaded} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video>
       <Container className={classes.outerQuoteContainer} maxWidth={matches ? 'lg' : false}>
         <Quote
           preWord="The"

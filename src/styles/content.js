@@ -2,7 +2,36 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   banner: {
-    width: '100vw'
+    display: ({ loaded }) => !loaded && 'none'
+  },
+  bannerLoader: {
+    width: '100vw',
+    height: '800px',
+    display: ({ loaded }) => loaded && 'none',
+    [theme.breakpoints.down('md')]: {
+      height: '600px'
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: '425px'
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: '250px'
+    }
+  },
+  quoteLoader: {
+    width: '100%',
+    height: '300px',
+    display: ({ quoteLoaded }) => quoteLoaded && 'none',
+    [theme.breakpoints.down('sm')]: {
+      height: '400px'
+    },
+    [theme.breakpoints.down('xs')]: {
+      width: '100vw',
+      height: '250px'
+    }
+  },
+  quoteVideo: {
+    display: ({ quoteLoaded }) => !quoteLoaded && 'none'
   },
   outerQuoteContainer: {
     [theme.breakpoints.down('sm')]: {
