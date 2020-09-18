@@ -21,6 +21,40 @@ function WeddingDetail() {
       <Typography justify="center" align="center" className={classes.spousesName}>Ligar</Typography>
       <Container maxWidth="lg">
         <Grid container alignItems="center" className={classes.profileGrid} spacing={2}>
+          <Grid item xs={6} md={5} className={classes.leftImage}>
+            <img src={Bride} alt="Bride" />
+          </Grid>
+          <Grid item xs={6} md={7}>
+            <Typography className={classes.profileName}>Ligar Eka Prasta</Typography>
+            <Typography className={classes.profileKeterangan}>Putri Pertama dari</Typography>
+            <Typography>Bapak Sutari</Typography>
+            <Typography>{`& Ibu Aas Hayati`}</Typography>
+          </Grid>
+        </Grid>
+      </Container>
+      <Typography align="center" className={classes.spousesName}>Aga</Typography>
+      <Container maxWidth="lg">
+        <Grid container alignItems="center" className={classes.profileGrid} spacing={2}>
+          <Grid item xs={6} md={7} className={classes.leftProfile}>
+            <div>
+              <Typography className={classes.profileName}>Agasetyo Manuhoro</Typography>
+              <Typography className={classes.profileKeterangan}>Putra Bungsu dari</Typography>
+              <Typography>{`Bapak Irawan Soedjono (Alm.)`}</Typography>
+              <Typography>{`& Ibu Endang Suryandari`}</Typography>
+            </div>
+          </Grid>
+          <Grid item xs={6} md={5}>
+            <img src={Groom} alt="Groom" />
+          </Grid>
+        </Grid>
+      </Container>
+
+
+
+      {/* //nyoba */}
+      <Typography justify="center" align="center" className={classes.spousesName}>Ligar</Typography>
+      <Container maxWidth="lg">
+        <Grid container alignItems="center" className={classes.profileGridNyoba} spacing={2}>
           <Grid item xs={5} md={5} className={classes.leftImage}>
             <img src={Bride} alt="Bride" />
           </Grid>
@@ -34,7 +68,7 @@ function WeddingDetail() {
       </Container>
       <Typography align="center" className={classes.spousesName}>Aga</Typography>
       <Container maxWidth="lg">
-        <Grid container alignItems="center" className={classes.profileGrid} spacing={2}>
+        <Grid container alignItems="center" className={classes.profileGridNyoba} spacing={2}>
           <Grid item xs={7} md={7} className={classes.leftProfile}>
             <div>
               <Typography className={classes.profileName}>Agasetyo Manuhoro</Typography>

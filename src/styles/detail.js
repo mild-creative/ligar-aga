@@ -42,10 +42,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       '& div': {
         width: '100%'
-      },
-      // '& img': {
-      //   width: '100%'
-      // }
+      }
     }
   },
   leftImage: {
@@ -66,6 +63,23 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '12px',
     fontWeight: 800,
     lineHeight: 3
+  },
+  // image nyoba
+  profileGridNyoba: {
+    marginTop: '2rem',
+    marginBottom: '2rem',
+    '& img': {
+      borderRadius: '50%',
+      border: '2px solid white',
+      width: 240,
+      height: 'intrinsic',
+      [theme.breakpoints.down('sm')]: {
+        width: '200px'
+      },
+      [theme.breakpoints.down('xs')]: {
+        width: '100%'
+      }
+    }
   }
 }));
 
