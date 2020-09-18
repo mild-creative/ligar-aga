@@ -20,7 +20,7 @@ function Opener({ handleClick }) {
         <Typography className={classes.couplesName}>
           {`${opener.bride}`}
         </Typography>
-        <Typography className={classes.couplesName}>
+        <Typography className={classes.and}>
           {`and`}
         </Typography>
         <Typography className={classes.couplesName}>

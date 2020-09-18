@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: '2px',
     color: 'rgba(0, 0, 0, 0.5)',
     [theme.breakpoints.down('sm')]: {
-      marginTop: '3.5rem'
+      marginTop: '1.5rem'
     }
   },
   couplesName: {
@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '28px'
     }
   },
+  and: {
+    fontFamily: `'Halimun', cursive`
+  },
   openerWrapper: {
     display: 'flex',
     justifyContent: 'center',
@@ -23,16 +26,17 @@ const useStyles = makeStyles((theme) => ({
     width: '100vw',
     "& p": {
       marginBottom: '2rem'
+    },
+    [theme.breakpoints.down('xs')]: {
+      '& p': {
+        marginBottom: '1.3rem'
+      }
     }
   },
   containerOpener: {
     textAlign: 'center',
-    [theme.breakpoints.down('sm')]: {
-      marginBottom: '3.5rem'
-    },
     [theme.breakpoints.down('xs')]: {
-      paddingTop: '25rem',
-      paddingBottom: '3.5rem'
+      paddingTop: '3.5rem'
     }
   },
   buttonOpen: {
