@@ -21,7 +21,7 @@ function WeddingDetail() {
       <Typography justify="center" align="center" className={classes.spousesName}>Ligar</Typography>
       <Container maxWidth="lg">
         <Grid container alignItems="center" className={classes.profileGrid} spacing={2}>
-          <Grid item xs={5} md={5} className={classes.leftProfile}>
+          <Grid item xs={5} md={5} className={classes.leftImage}>
             <img src={Bride} alt="Bride" />
           </Grid>
           <Grid item xs={7} md={7}>

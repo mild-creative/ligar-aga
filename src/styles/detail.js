@@ -48,6 +48,13 @@ const useStyles = makeStyles((theme) => ({
       // }
     }
   },
+  leftImage: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'center'
+    }
+  },
   profileName: {
     fontSize: '30px',
     fontWeight: 800,
