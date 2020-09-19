@@ -109,7 +109,7 @@ function Gallery() {
               </a>
             )}
             {content.type === 'video/mp4' && (
-              <video style={{ width: '100%' }} muted src={content.url} allowFullScreen controls className={classes.galleryImg} />
+              <video poster={content.url} style={{ width: '100%' }} muted src={content.url} allowFullScreen controls className={classes.galleryImg} />
             )}
             <Typography align="center">{`@${content?.name ?? '-'}`}</Typography>
           </Grid>
