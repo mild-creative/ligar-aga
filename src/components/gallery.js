@@ -29,10 +29,17 @@ function Gallery() {
     fetchGallery();
   }, [])
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     setLoading(true);
     try {
       formData.append('name', nameUpload)
+      // const fileSize = formData && parseInt(formData.size, 10);
+      // console.log(fileSize, 'size', formData)
+      // if (fileSize > 300000) {
+      //   console.log('gede amat')
+      //   return;
+      // }
+      // console.log('lolos')
       await postGallery(formData);
     } finally {
       resetField();
