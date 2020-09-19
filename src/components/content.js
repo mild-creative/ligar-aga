@@ -22,7 +22,6 @@ import FloatingButton from './floating-menu';
 import VideoRight from '../assets/right-video.mp4';
 import VideoLeft from '../assets/video-left.mp4';
 import BannerVideo from '../assets/banner.mp4';
-// import Poster from '../assets/LA-icon.png';
 import Backsound from '../assets/BACKSOUND_PREWED_AGA.mp3';
 
 function Content({ open }) {

@@ -92,17 +92,20 @@ function Gallery() {
         nameUpload={nameUpload}
         upload={true}
       />
-      <Grid container className={classes.galleryContainer}>
+      <Grid container className={classes.galleryContainer} spacing={2}>
         {gallery.map(content => (
-          <Grid item xs={6} md={4} lg={3}>
+          <Grid item xs={6} md={4} lg={3}
+            className={classes.eachGallery}
+          >
             {(content.type === 'image/jpeg' || content.type === 'image/png') && (
               <a href={content.url} target="_blank" rel="noopener noreferrer">
-                <img src={content.url} alt={content.url} width="100%" />
+                <img src={content.url} alt={content.url} className={classes.galleryImg} />
               </a>
             )}
             {content.type === 'video/mp4' && (
-              <video style={{ width: '100%', height: '100%' }} muted src={content.url} allowFullScreen controls />
+              <video style={{ width: '100%' }} muted src={content.url} allowFullScreen controls className={classes.galleryImg} />
             )}
+            <Typography align="center">{`@${content?.name ?? '-'}`}</Typography>
           </Grid>
         ))}
       </Grid>

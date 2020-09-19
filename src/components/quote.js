@@ -3,7 +3,6 @@ import clsx from 'clsx';
 import Skeleton from '@material-ui/lab/Skeleton';
 import { Grid, Typography } from '@material-ui/core';
 import useStyles from '../styles/content';
-import Poster from '../assets/LA-icon.png';
 
 function Quote({ preWord, highlightWord, reverse, quote, img, children }) {
   const [quoteLoaded, setQuoteLoaded] = React.useState(false);

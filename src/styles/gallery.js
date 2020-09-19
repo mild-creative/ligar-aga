@@ -11,7 +11,8 @@ const useStyles = makeStyles((theme) => ({
       // transition: 'transform .5s, filter 0.5s ease-in-out',
       // filter: 'grayscale(100%)',
       transition: 'all 0.5s',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      marginBottom: '1.5rem'
     },
     // '& img': {
     //   transition: 'all 0.5s',
@@ -20,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     '& div:hover': {
       transform: 'scale(1.05)',
       // filter: 'grayscale(0)'
+    },
+    '& p': {
+      letterSpacing: '2px'
     }
   },
   guestBook: {
@@ -28,6 +32,15 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '1rem',
     marginTop: '2.5rem'
   },
+  galleryImg: {
+    height: '250px'
+  },
+  eachGallery: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'center'
+  }
 }));
 
 export default useStyles;

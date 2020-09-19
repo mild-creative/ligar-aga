@@ -6,7 +6,7 @@ import {
 } from '@material-ui/core';
 import useStyles from '../styles/detail';
 
-import Groom from '../assets/groom.png';
+import Groom from '../assets/groom.JPG';
 import Bride from '../assets/ligar-bride.png';
 
 function WeddingDetail() {
