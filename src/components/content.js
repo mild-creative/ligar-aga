@@ -51,7 +51,7 @@ function Content({ open }) {
       />
       {/* <Fade in={open} timeout={2000}> */}
       <Skeleton variant="rect" animation="wave" className={classes.bannerLoader} />
-      <video className={classes.banner} onLoadedData={onLoaded} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video>
+      <video className={classes.banner} onLoadedData={onLoaded} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline playsinline webkit-playsInline webkit-playsinline="true"></video>
       <Container className={classes.outerQuoteContainer} maxWidth={matches ? 'lg' : false}>
         <Quote
           preWord="The"

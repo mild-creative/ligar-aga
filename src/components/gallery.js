@@ -66,7 +66,6 @@ function Gallery() {
     setFetchLoading(true);
     try {
       const galleryContents = await getGallery(showPage);
-      console.log(galleryContents)
       setGallery(galleryContents?.data?.gallery);
       setCount(Math.ceil(galleryContents?.data?.length / 10))
     } finally {

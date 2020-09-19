@@ -27,7 +27,7 @@ function Quote({ preWord, highlightWord, reverse, quote, img, children }) {
       </Grid>
       <Grid item sm={12} md={6} className={clsx(classes.contentCenterer, reverse && classes.imageContainer)}>
         <Skeleton variant="rect" animation="wave" className={classes.quoteLoader} />
-        <video className={classes.quoteVideo} onLoadedData={onLoaded} id={`${preWord}`} width="100%" height="100%" loop autoPlay='autoplay' muted src={img} playsInline webkit-playsInline></video>
+        <video className={classes.quoteVideo} onLoadedData={onLoaded} id={`${preWord}`} width="100%" height="100%" loop autoPlay='autoplay' muted src={img} playsInline playsinline webkit-playsInline webkit-playsinline="true"></video>
       </Grid>
     </Grid>
   )
