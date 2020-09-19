@@ -23,6 +23,7 @@ function Gallery() {
   const [fetchLoading, setFetchLoading] = useState(false);
   const [commentPage, setPage] = useState(1);
   const [guestFile, setGuestFile] = useState('');
+  const [nameUpload, setNameUpload] = useState('');
 
   useEffect(() => {
     fetchGallery();
@@ -31,6 +32,7 @@ function Gallery() {
   const handleSubmit = async () => {
     setLoading(true);
     try {
+      formData.append('name', nameUpload)
       await postGallery(formData);
     } finally {
       resetField();
@@ -41,15 +43,23 @@ function Gallery() {
   }
 
   const handleChange = (e) => {
-    let formData = new FormData()
-    formData.append('image', e.target.files[0])
-    setFormData(formData);
-    setGuestFile(e.target.value)
+    switch (e.target.id) {
+      case 'name':
+        setNameUpload(e.target.value)
+        break;
+      default:
+        let formData = new FormData()
+        formData.append('image', e.target.files[0])
+        setFormData(formData);
+        setGuestFile(e.target.value)
+        break;
+    }
   }
 
   const resetField = () => {
     setGuestFile('');
     setFormData('')
+    setNameUpload('')
   }
 
   const fetchGallery = async (showPage) => {
@@ -79,6 +89,7 @@ function Gallery() {
         alertOpen={alertOpen}
         handleChange={handleChange}
         name={guestFile}
+        nameUpload={nameUpload}
         upload={true}
       />
       <Grid container className={classes.galleryContainer}>

@@ -19,7 +19,8 @@ function GuestForm({
   handleChange,
   name,
   whoAmI,
-  upload
+  upload,
+  nameUpload
 }) {
   const classes = useStyles();
   const inputRef = useRef(null);
@@ -109,10 +110,23 @@ function GuestForm({
           </div>
         </>
       )}
-      {upload && (
+      {upload && (<>
         <div>
           <TextValidator
+            label="Name"
             id="name"
+            size="small"
+            type="text"
+            variant="outlined"
+            value={nameUpload}
+            onChange={(e) => { handleChange(e) }}
+            validators={['required']}
+            errorMessages={['Name field is required']}
+          />
+        </div>
+        <div>
+          <TextValidator
+            id="file"
             size="small"
             type="file"
             variant="outlined"
@@ -122,6 +136,7 @@ function GuestForm({
             errorMessages={['File field is required']}
           />
         </div>
+      </>
       )}
       <Button disabled={loadingSubmit} type="submit" variant="outlined" className={classes.button}>
         {loadingSubmit ? 'Submitting Form ...' : 'Submit'}
