@@ -1,12 +1,11 @@
 import React from 'react';
 import {
-  // Fade,
   Container,
-  useMediaQuery,
-  // Hidden
+  useMediaQuery
 } from '@material-ui/core';
 import ReactAudioPlayer from 'react-audio-player';
-import Skeleton from '@material-ui/lab/Skeleton';
+import ReactPlayer from 'react-player'
+// import Skeleton from '@material-ui/lab/Skeleton';
 import useStyles from '../styles/content';
 
 import Navbar from './navbar';
@@ -16,7 +15,6 @@ import Comment from './comment';
 import DetailReception from './detail-reception';
 import Footer from './footer';
 import Streaming from './streaming';
-// import Gallery from './guest-gallery';
 import FloatingButton from './floating-menu';
 
 import VideoRight from '../assets/right-video.mp4';
@@ -26,7 +24,6 @@ import Backsound from '../assets/BACKSOUND_PREWED_AGA.mp3';
 import Poster from '../assets/official-icon.jpeg';
 
 function Content({ open }) {
-  const videoRef = React.useRef(null);
   const matches = useMediaQuery(theme => theme.breakpoints.up('md'));
   const [mute, setMute] = React.useState(false);
   const [loaded, setLoaded] = React.useState(false);
@@ -34,25 +31,9 @@ function Content({ open }) {
     loaded
   });
 
-  React.useEffect(() => {
-    console.log(videoRef, '123')
-  }, []);
-
   const onLoaded = () => {
     setLoaded(true);
   }
-
-  // function closeFullscreen() {
-  //   if (document.exitFullscreen) {
-  //     document.exitFullscreen();
-  //   } else if (document.mozCancelFullScreen) { /* Firefox */
-  //     document.mozCancelFullScreen();
-  //   } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
-  //     document.webkitExitFullscreen();
-  //   } else if (document.msExitFullscreen) { /* IE/Edge */
-  //     document.msExitFullscreen();
-  //   }
-  // }
 
   return (
     <>
@@ -67,10 +48,31 @@ function Content({ open }) {
         mute={mute}
         setMute={setMute}
       />
-      {/* <Fade in={open} timeout={2000}> */}
       {/* <Skeleton variant="rect" animation="wave" className={classes.bannerLoader} />
       <video ref={videoRef} className={classes.banner} onLoadedData={onLoaded} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video> */}
-      <video poster={Poster} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video>
+      {/* <video poster={Poster} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video> */}
+      <ReactPlayer
+        url={BannerVideo}
+        width="100%"
+        height="100%"
+        playing
+        playsinline
+        loop
+      />
+      {/* <div className={classes.videoIFContainer}>
+        <iframe
+          // src={BannerVideo}
+          // src="https://storage.googleapis.com/asset-aga/banner.mp4?autoplay=0&controls=0"
+          src="https://www.youtube.com/embed/RIGivoRDSyM?rel=0&modestbranding=1&autohide=1&showinfo=0&controls=0"
+          title="Banner Video"
+          // width="100%"
+          // height="100%"
+          // allowFullScreen="false"
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          className={classes.video}
+        />
+      </div> */}
       <Container className={classes.outerQuoteContainer} maxWidth={matches ? 'lg' : false}>
         <Quote
           preWord="The"
@@ -90,11 +92,7 @@ function Content({ open }) {
       <Streaming />
       <Comment />
       <Gallery />
-      {/* <Hidden smUp>
-        <BottomNav />
-      </Hidden> */}
       <Footer />
-      {/* </Fade> */}
     </>
   );
 }

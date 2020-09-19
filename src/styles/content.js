@@ -88,6 +88,19 @@ const useStyles = makeStyles((theme) => ({
   contentCenterer: {
     display: 'flex',
     alignItems: 'center'
+  },
+  videoIFContainer: {
+    position: 'relative',
+    width: '100%',
+    paddingBottom: '56.25%'
+  },
+  video: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    border: 0
   }
 }));
 

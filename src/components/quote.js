@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import Skeleton from '@material-ui/lab/Skeleton';
+// import Skeleton from '@material-ui/lab/Skeleton';
 import { Grid, Typography } from '@material-ui/core';
 import useStyles from '../styles/content';
 
@@ -14,9 +14,9 @@ function Quote({ preWord, highlightWord, reverse, quote, img, children }) {
     quoteLoaded
   });
 
-  const onLoaded = () => {
-    setQuoteLoaded(true);
-  }
+  // const onLoaded = () => {
+  //   setQuoteLoaded(true);
+  // }
 
   return (
     <Grid container direction={reverse && 'row-reverse'} className={classes.quoteContainer}>

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import {
   Container,
   Typography,
-  Grid
+  Grid,
+  Snackbar
 } from '@material-ui/core';
 import Pagination from '@material-ui/lab/Pagination';
+import MuiAlert from '@material-ui/lab/Alert';
 
 // import GuestForm from './input-form';
 import GuestForm from './guest-form';
@@ -13,14 +15,21 @@ import useStyles from '../styles/gallery';
 
 // import Groom from '../assets/groom.png';
 
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
+
 function Gallery() {
   const classes = useStyles();
   const [gallery, setGallery] = useState([]);
   const [count, setCount] = useState(1);
   const [formData, setFormData] = useState('');
+  const [file_, setFile] = useState('');
   const [loadingSubmit, setLoading] = useState(false);
   const [alertOpen, setAlertOpen] = useState(false);
   const [fetchLoading, setFetchLoading] = useState(false);
+  const [alertErrOpen, setErrOpen] = useState(false);
+  const [msgAfterSubmit, setMsg] = useState('');
   const [commentPage, setPage] = useState(1);
   const [guestFile, setGuestFile] = useState('');
   const [nameUpload, setNameUpload] = useState('');
@@ -29,18 +38,27 @@ function Gallery() {
     fetchGallery();
   }, [])
 
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setErrOpen(false);
+  };
+
   const handleSubmit = async (e) => {
     setLoading(true);
     try {
       formData.append('name', nameUpload)
-      // const fileSize = formData && parseInt(formData.size, 10);
-      // console.log(fileSize, 'size', formData)
-      // if (fileSize > 300000) {
-      //   console.log('gede amat')
-      //   return;
-      // }
-      // console.log('lolos')
+      const fileSize = file_ && parseInt(file_.size, 10);
+      if (fileSize > 300000) {
+        throw new Error();
+        // return;
+      }
+      console.log('lolos')
       await postGallery(formData);
+    } catch(err) {
+      setErrOpen(true);
+      setMsg('File is too large, please try another file');
     } finally {
       resetField();
       setLoading(false);
@@ -57,6 +75,7 @@ function Gallery() {
       default:
         let formData = new FormData()
         formData.append('image', e.target.files[0])
+        setFile(e.target.files[0]);
         setFormData(formData);
         setGuestFile(e.target.value)
         break;
@@ -115,6 +134,11 @@ function Gallery() {
           </Grid>
         ))}
       </Grid>
+      <Snackbar open={alertErrOpen} autoHideDuration={4000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="error">
+          {!!msgAfterSubmit ? msgAfterSubmit : 'Something went wrong'}
+        </Alert>
+      </Snackbar>
       <Pagination
         count={count}
         variant="outlined"
