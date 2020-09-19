@@ -23,8 +23,10 @@ import VideoRight from '../assets/right-video.mp4';
 import VideoLeft from '../assets/video-left.mp4';
 import BannerVideo from '../assets/banner.mp4';
 import Backsound from '../assets/BACKSOUND_PREWED_AGA.mp3';
+import Poster from '../assets/official-icon.jpeg';
 
 function Content({ open }) {
+  const videoRef = React.useRef(null);
   const matches = useMediaQuery(theme => theme.breakpoints.up('md'));
   const [mute, setMute] = React.useState(false);
   const [loaded, setLoaded] = React.useState(false);
@@ -32,9 +34,25 @@ function Content({ open }) {
     loaded
   });
 
+  React.useEffect(() => {
+    console.log(videoRef, '123')
+  }, []);
+
   const onLoaded = () => {
     setLoaded(true);
   }
+
+  // function closeFullscreen() {
+  //   if (document.exitFullscreen) {
+  //     document.exitFullscreen();
+  //   } else if (document.mozCancelFullScreen) { /* Firefox */
+  //     document.mozCancelFullScreen();
+  //   } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+  //     document.webkitExitFullscreen();
+  //   } else if (document.msExitFullscreen) { /* IE/Edge */
+  //     document.msExitFullscreen();
+  //   }
+  // }
 
   return (
     <>
@@ -50,8 +68,9 @@ function Content({ open }) {
         setMute={setMute}
       />
       {/* <Fade in={open} timeout={2000}> */}
-      <Skeleton variant="rect" animation="wave" className={classes.bannerLoader} />
-      <video className={classes.banner} onLoadedData={onLoaded} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video>
+      {/* <Skeleton variant="rect" animation="wave" className={classes.bannerLoader} />
+      <video ref={videoRef} className={classes.banner} onLoadedData={onLoaded} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video> */}
+      <video poster={Poster} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video>
       <Container className={classes.outerQuoteContainer} maxWidth={matches ? 'lg' : false}>
         <Quote
           preWord="The"
