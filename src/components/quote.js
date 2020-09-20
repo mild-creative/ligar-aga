@@ -32,14 +32,17 @@ function Quote({ preWord, highlightWord, reverse, quote, img, children }) {
         {/* <Skeleton variant="rect" animation="wave" className={classes.quoteLoader} />
         <video className={classes.quoteVideo} onLoadedData={onLoaded} id={`${preWord}`} width="100%" height="100%" loop autoPlay='autoplay' muted src={img} playsInline webkit-playsInline></video> */}
         {/* <video poster={Poster} id={`${preWord}`} width="100%" height="100%" loop autoPlay='autoplay' muted src={img} playsInline webkit-playsInline></video> */}
-        <ReactPlayer
+        {/* <ReactPlayer
           url={img}
           width="100%"
           height="100%"
           playing
           playsinline
           loop
-        />
+        /> */}
+        <video preload='auto' autoPlay playsInline loop muted height='100%' width='100%'>
+          <source src={img} type='video/mp4'></source>
+        </video>
       </Grid>
     </Grid>
   )

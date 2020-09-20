@@ -60,7 +60,7 @@ function Content({ open }) {
         playsinline
         loop
       /> */}
-      <ReactVideo
+      {/* <ReactVideo
         playsInline
         src={BannerVideo}
         loop
@@ -69,7 +69,10 @@ function Content({ open }) {
         poster={Poster}
         containerWidth="100%"
         containerHeight="100%"
-      />
+      /> */}
+       <video preload='auto' autoPlay playsInline loop muted height='100%' width='100%'>
+          <source src={BannerVideo} type='video/mp4'></source>
+        </video>
       {/* <div className={classes.videoIFContainer}>
         <iframe
           // src={BannerVideo}

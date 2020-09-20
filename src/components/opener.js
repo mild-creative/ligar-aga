@@ -12,7 +12,7 @@ function Opener({ handleClick }) {
   const classes = useStyles();
   return (
     <div className={classes.openerWrapper}>
-      <video id="banner" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline className={classes.videoBackground}></video>
+      {/* <video id="banner" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline className={classes.videoBackground}></video> */}
       <Container maxWidth="md" className={classes.containerOpener}>
         <Typography className={classes.top}>
           {opener.top}
