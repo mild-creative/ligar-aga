@@ -136,11 +136,20 @@ function GuestForm({
             errorMessages={['File field is required']}
           />
         </div>
+        <p style={{ color: 'red' }}>
+          max file 3mb!
+        </p>
       </>
       )}
-      <Button disabled={loadingSubmit} type="submit" variant="outlined" className={classes.button}>
-        {loadingSubmit ? 'Submitting Form ...' : 'Submit'}
-      </Button>
+      {
+        upload
+          ? <Button disabled={loadingSubmit} type="submit" variant="outlined" className={classes.button}>
+            {loadingSubmit ? 'Submited' : 'Submit'}
+          </Button>
+          : <Button disabled={loadingSubmit} type="submit" variant="outlined" className={classes.button}>
+            {loadingSubmit ? 'Submited' : 'Submit'}
+          </Button>
+      }
       <Snackbar open={alertOpen} autoHideDuration={4000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           {upload ? `Upload success` : `Success submit comment`}

@@ -4,6 +4,8 @@ import clsx from 'clsx';
 import { Grid, Typography } from '@material-ui/core';
 import ReactPlayer from 'react-player';
 import useStyles from '../styles/content';
+import { detect } from 'detect-browser';
+import { browser } from '../helpers/browser';
 
 // import Poster from '../assets/official-icon.jpeg';
 
@@ -40,9 +42,14 @@ function Quote({ preWord, highlightWord, reverse, quote, img, children }) {
           playsinline
           loop
         /> */}
-        <video preload='auto' autoPlay playsInline loop muted height='100%' width='100%'>
-          <source src={img} type='video/mp4'></source>
-        </video>
+        {
+          browser()
+            ? <video preload='auto' autoPlay playsInline loop muted height='100%' width='100%'>
+              <source src={img} type='video/mp4'></source>
+            </video>
+            : <img height='100%' width='100%' src='https://cdn2.tstatic.net/tribunnews/foto/bank/images/tes-kepribadian-gambar-pertama-11.jpg' />
+        }
+
       </Grid>
     </Grid>
   )

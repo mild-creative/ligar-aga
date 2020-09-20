@@ -56,12 +56,12 @@ function Gallery() {
       }
       console.log('lolos')
       await postGallery(formData);
-    } catch(err) {
+    } catch (err) {
       setErrOpen(true);
       setMsg('File is too large, please try another file');
+      setLoading(false);
     } finally {
       resetField();
-      setLoading(false);
       setAlertOpen(true);
       fetchGallery();
     }

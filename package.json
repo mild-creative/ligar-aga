@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
     "clsx": "^1.1.1",
+    "detect-browser": "^5.1.1",
     "moment-timezone": "^0.5.31",
     "react": "^16.13.1",
     "react-audio-player": "^0.13.0",

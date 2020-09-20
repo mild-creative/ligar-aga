@@ -7,12 +7,17 @@ import {
 import useStyles from '../styles/opener';
 import BannerVideo from '../assets/banner.mp4';
 import { opener } from '../constants';
+import { browser } from '../helpers/browser';
 
 function Opener({ handleClick }) {
   const classes = useStyles();
   return (
     <div className={classes.openerWrapper}>
-      {/* <video id="banner" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline className={classes.videoBackground}></video> */}
+      {
+        browser()
+          ? <video id="banner" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline className={classes.videoBackground}></video>
+          : null
+      }
       <Container maxWidth="md" className={classes.containerOpener}>
         <Typography className={classes.top}>
           {opener.top}

@@ -22,6 +22,7 @@ import VideoRight from '../assets/right-video.mp4';
 import VideoLeft from '../assets/video-left.mp4';
 import BannerVideo from '../assets/banner.mp4';
 import Backsound from '../assets/BACKSOUND_PREWED_AGA.mp3';
+import { browser } from '../helpers/browser';
 import Poster from '../assets/official-icon.jpeg';
 
 function Content({ open }) {
@@ -70,9 +71,13 @@ function Content({ open }) {
         containerWidth="100%"
         containerHeight="100%"
       /> */}
-       <video preload='auto' autoPlay playsInline loop muted height='100%' width='100%'>
-          <source src={BannerVideo} type='video/mp4'></source>
-        </video>
+      {
+        browser()
+          ? <video preload='auto' autoPlay playsInline loop muted height='100%' width='100%'>
+            <source src={BannerVideo} type='video/mp4'></source>
+          </video>
+          : <img height='100%' width='100%' src='https://cdn2.tstatic.net/tribunnews/foto/bank/images/tes-kepribadian-gambar-pertama-11.jpg' />
+      }
       {/* <div className={classes.videoIFContainer}>
         <iframe
           // src={BannerVideo}

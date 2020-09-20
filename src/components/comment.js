@@ -35,7 +35,6 @@ function Comment() {
       console.log(submitted, 'success')
     } finally {
       resetField();
-      setLoading(false);
       setAlertOpen(true);
       fetchComments();
     }
