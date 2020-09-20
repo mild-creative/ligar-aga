@@ -6,12 +6,17 @@ export const browser = () => {
     const name = b.name
     const os = b.os
     const version = Number(b.version.split('.')[0])
-    if (name == 'chromium-webview' || name == 'ios-webview') {
-        return false
+    let result = true
+    if (os == 'Android OS') {
+        if (name == 'chrome' && version > 66) {
+            return true
+        } else if (name == 'samsung' && version > 9) {
+            return true
+        } else {
+            result = false
+        }
+    } else if (name == 'ios-webview') {
+        result = false
     }
-    else if (name == 'chrome' && os == 'Android OS' && version < 66) {
-        return false
-    } else {
-        return true
-    }
+    return result
 }
