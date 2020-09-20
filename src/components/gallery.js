@@ -12,6 +12,7 @@ import MuiAlert from '@material-ui/lab/Alert';
 import GuestForm from './guest-form';
 import { getGallery, postGallery } from '../http-request';
 import useStyles from '../styles/gallery';
+import VideoThumb from '../assets/video-icon.png';
 
 // import Groom from '../assets/groom.png';
 
@@ -128,7 +129,7 @@ function Gallery() {
               </a>
             )}
             {content.type === 'video/mp4' && (
-              <video preload='metadata' style={{ width: '100%' }} muted src={content.url + '#t=0.5'} allowFullScreen controls className={classes.galleryImg} />
+              <video preload='metadata' style={{ width: '100%' }} muted src={content.url} playsInline controls className={classes.galleryImg} />
             )}
             <Typography align="center">{`@${content?.name ?? '-'}`}</Typography>
           </Grid>
