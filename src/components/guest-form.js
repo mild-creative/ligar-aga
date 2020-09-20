@@ -137,7 +137,7 @@ function GuestForm({
           />
         </div>
         <p style={{ color: 'red' }}>
-          max file 3mb!
+          max file 3mb
         </p>
       </>
       )}

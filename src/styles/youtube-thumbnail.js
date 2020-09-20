@@ -1,12 +1,15 @@
 import { makeStyles } from '@material-ui/core/styles';
-import Icon from '../assets/LA-icon.png';
+import Ytb from '../assets/thumbnail-ytb.jpg';
 
 const useStyles = makeStyles((theme) => ({
   container: {
     width: '100%',
     borderRadius: '5px',
     height: '550px',
-    backgroundImage: `url('${Icon}')`,
+    backgroundImage: `url('${Ytb}')`,
+    backgroundSize:'100%',
+    backgroundRepeat:'no-repeat',
+    backgroundPosition:'center',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',

@@ -9,7 +9,7 @@ import { browser } from '../helpers/browser';
 
 // import Poster from '../assets/official-icon.jpeg';
 
-function Quote({ preWord, highlightWord, reverse, quote, img, children }) {
+function Quote({ preWord, highlightWord, reverse, quote, img, children, foto }) {
   const [quoteLoaded, setQuoteLoaded] = React.useState(false);
   const classes = useStyles({
     reverse,
@@ -47,7 +47,7 @@ function Quote({ preWord, highlightWord, reverse, quote, img, children }) {
             ? <video preload='auto' autoPlay playsInline loop muted height='100%' width='100%'>
               <source src={img} type='video/mp4'></source>
             </video>
-            : <img height='100%' width='100%' src='https://cdn2.tstatic.net/tribunnews/foto/bank/images/tes-kepribadian-gambar-pertama-11.jpg' />
+            : <img height='100%' width='100%' src={foto} />
         }
 
       </Grid>

@@ -6,6 +6,7 @@ import {
 } from '@material-ui/core';
 import useStyles from '../styles/opener';
 import BannerVideo from '../assets/banner.mp4';
+import BannerFoto from '../assets/foto1.jpeg'
 import { opener } from '../constants';
 import { browser } from '../helpers/browser';
 

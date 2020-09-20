@@ -21,6 +21,9 @@ import FloatingButton from './floating-menu';
 import VideoRight from '../assets/right-video.mp4';
 import VideoLeft from '../assets/video-left.mp4';
 import BannerVideo from '../assets/banner.mp4';
+import BannerFoto from '../assets/foto1.jpeg';
+import FotoRight from '../assets/foto2.jpeg';
+import FotoLeft from '../assets/foto3.jpeg';
 import Backsound from '../assets/BACKSOUND_PREWED_AGA.mp3';
 import { browser } from '../helpers/browser';
 import Poster from '../assets/official-icon.jpeg';
@@ -76,7 +79,7 @@ function Content({ open }) {
           ? <video preload='auto' autoPlay playsInline loop muted height='100%' width='100%'>
             <source src={BannerVideo} type='video/mp4'></source>
           </video>
-          : <img height='100%' width='100%' src='https://cdn2.tstatic.net/tribunnews/foto/bank/images/tes-kepribadian-gambar-pertama-11.jpg' />
+          : <img height='100%' width='100%' src={BannerFoto} />
       }
       {/* <div className={classes.videoIFContainer}>
         <iframe
@@ -98,6 +101,7 @@ function Content({ open }) {
           highlightWord="Highest"
           quote="Happiness On earth"
           img={VideoRight}
+          foto={FotoRight}
         />
         <Quote
           reverse={true}
@@ -105,6 +109,7 @@ function Content({ open }) {
           highlightWord="Happines"
           quote="Of Marriage"
           img={VideoLeft}
+          foto={FotoLeft}
         />
       </Container>
       <DetailReception />

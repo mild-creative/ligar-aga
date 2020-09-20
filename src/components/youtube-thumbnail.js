@@ -8,7 +8,7 @@ function YoutubeThumb() {
   const classes = useStyles();
   const [hover, setHover] = React.useState(false);
   return (
-    <a href="https://google.com" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.youtube.com/watch?v=ZfJySK4znXE" target="_blank" rel="noopener noreferrer">
       <div
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
