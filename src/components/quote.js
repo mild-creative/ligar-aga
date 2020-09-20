@@ -2,9 +2,10 @@ import React from 'react';
 import clsx from 'clsx';
 // import Skeleton from '@material-ui/lab/Skeleton';
 import { Grid, Typography } from '@material-ui/core';
+import ReactPlayer from 'react-player';
 import useStyles from '../styles/content';
 
-import Poster from '../assets/official-icon.jpeg';
+// import Poster from '../assets/official-icon.jpeg';
 
 function Quote({ preWord, highlightWord, reverse, quote, img, children }) {
   const [quoteLoaded, setQuoteLoaded] = React.useState(false);
@@ -30,7 +31,15 @@ function Quote({ preWord, highlightWord, reverse, quote, img, children }) {
       <Grid item sm={12} md={6} className={clsx(classes.contentCenterer, reverse && classes.imageContainer)}>
         {/* <Skeleton variant="rect" animation="wave" className={classes.quoteLoader} />
         <video className={classes.quoteVideo} onLoadedData={onLoaded} id={`${preWord}`} width="100%" height="100%" loop autoPlay='autoplay' muted src={img} playsInline webkit-playsInline></video> */}
-        <video poster={Poster} id={`${preWord}`} width="100%" height="100%" loop autoPlay='autoplay' muted src={img} playsInline webkit-playsInline></video>
+        {/* <video poster={Poster} id={`${preWord}`} width="100%" height="100%" loop autoPlay='autoplay' muted src={img} playsInline webkit-playsInline></video> */}
+        <ReactPlayer
+          url={img}
+          width="100%"
+          height="100%"
+          playing
+          playsinline
+          loop
+        />
       </Grid>
     </Grid>
   )

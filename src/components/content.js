@@ -4,7 +4,7 @@ import {
   useMediaQuery
 } from '@material-ui/core';
 import ReactAudioPlayer from 'react-audio-player';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 // import Skeleton from '@material-ui/lab/Skeleton';
 import useStyles from '../styles/content';
 
