@@ -5,6 +5,7 @@ import {
 } from '@material-ui/core';
 import ReactAudioPlayer from 'react-audio-player';
 import ReactPlayer from 'react-player';
+import ReactVideo from 'react-background-video-player';
 // import Skeleton from '@material-ui/lab/Skeleton';
 import useStyles from '../styles/content';
 
@@ -51,13 +52,23 @@ function Content({ open }) {
       {/* <Skeleton variant="rect" animation="wave" className={classes.bannerLoader} />
       <video ref={videoRef} className={classes.banner} onLoadedData={onLoaded} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video> */}
       {/* <video poster={Poster} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video> */}
-      <ReactPlayer
+      {/* <ReactPlayer
         url={BannerVideo}
         width="100%"
         height="100%"
         playing
         playsinline
         loop
+      /> */}
+      <ReactVideo
+        playsInline
+        src={BannerVideo}
+        loop
+        autoPlay
+        muted
+        poster={Poster}
+        containerWidth="100%"
+        containerHeight="100%"
       />
       {/* <div className={classes.videoIFContainer}>
         <iframe
