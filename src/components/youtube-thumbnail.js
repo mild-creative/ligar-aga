@@ -14,7 +14,7 @@ function YoutubeThumb() {
         onMouseLeave={() => setHover(false)}
         className={classes.container}
       >
-        <img src={hover ? PlayButton : PlayButtonGrey} alt="Play Button" className={classes.playButton} />
+        <img src={PlayButton} alt="Play Button" className={classes.playButton} />
       </div>
     </a>
   );
