@@ -13,6 +13,7 @@ import GuestForm from './guest-form';
 import { getGallery, postGallery } from '../http-request';
 import useStyles from '../styles/gallery';
 import VideoThumb from '../assets/video-icon.png';
+import { detect } from 'detect-browser';
 
 // import Groom from '../assets/groom.png';
 
@@ -128,9 +129,12 @@ function Gallery() {
                 <img src={content.url} alt={content.url} className={classes.galleryImg} />
               </a>
             )}
-            {content.type === 'video/mp4' && (
-              <video preload='metadata' style={{ width: '100%' }} muted src={content.url} playsInline controls className={classes.galleryImg} />
-            )}
+            {content.type === 'video/mp4' && detect().os == 'Android OS'
+              ? <video poster={VideoThumb} style={{ width: '100%' }} muted src={content.url} playsInline controls className={classes.galleryImg} />
+              : content.type === 'video/mp4'
+                ? <video preload='metadata' style={{ width: '100%' }} muted src={content.url + '#t=0.1'} playsInline controls className={classes.galleryImg} />
+                : null
+            }
             <Typography align="center">{`@${content?.name ?? '-'}`}</Typography>
           </Grid>
         ))}
