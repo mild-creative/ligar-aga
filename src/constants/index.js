@@ -19,13 +19,3 @@ export const navbarMenu = [{
 }, {
   name: 'Guestbook'
 }]
-
-export const dummy = [{
-  name: 'Dicky',
-  email: 'dicky@head.com',
-  msg: 'Selamat bro'
-}, {
-  name: 'Sarah dan Partner',
-  email: 'sarah.suebah@partner.com',
-  msg: 'Ciyee akhirnya nyusul'
-}]

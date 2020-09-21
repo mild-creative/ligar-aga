@@ -79,7 +79,7 @@ function Content({ open }) {
           ? <video preload='auto' autoPlay playsInline loop muted height='100%' width='100%'>
             <source src={BannerVideo} type='video/mp4'></source>
           </video>
-          : <img height='100%' width='100%' src={BannerFoto} />
+          : <img height='100%' width='100%' src={BannerFoto} alt="Banner" />
       }
       {/* <div className={classes.videoIFContainer}>
         <iframe

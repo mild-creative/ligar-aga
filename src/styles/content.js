@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
       height: '500px !important'
     },
     [theme.breakpoints.down('xs')]: {
-      height: '350px !important'
+      height: '230px !important'
     }
   },
   highlightedWord: {

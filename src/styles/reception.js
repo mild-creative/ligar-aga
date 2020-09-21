@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '60px',
     [theme.breakpoints.down('sm')]: {
       fontSize: '40px'
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '27.5px'
     }
   },
   akadNikah: {

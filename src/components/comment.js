@@ -8,7 +8,6 @@ import Pagination from '@material-ui/lab/Pagination';
 import GuestForm from './guest-form';
 import useStyles from '../styles/comment';
 import { getComments, postComments } from '../http-request';
-// import { dummy } from '../constants';
 
 function Comment() {
   const classes = useStyles();
