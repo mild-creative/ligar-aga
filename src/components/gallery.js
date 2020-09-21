@@ -52,7 +52,7 @@ function Gallery() {
     try {
       formData.append('name', nameUpload)
       const fileSize = file_ && parseInt(file_.size, 10);
-      if (fileSize > 300000) {
+      if (fileSize > 3000000) {
         throw new Error();
         // return;
       }
