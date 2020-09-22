@@ -1,7 +1,7 @@
 import api from './base-url';
 
-export const getComments = (page = 1) => {
-  return api().get('/comment', { params: { page } })
+export const getComments = (page = 1, pageSize) => {
+  return api().get('/comment', { params: { page, pageSize } })
     .then(({ data }) => {
       return data;
     })
@@ -21,8 +21,8 @@ export const postComments = (data) => {
     })
 }
 
-export const getGallery = (page = 1) => {
-  return api().get('/gallery', { params: { page } })
+export const getGallery = (page = 1, pageSize) => {
+  return api().get('/gallery', { params: { page, pageSize } })
     .then(data => {
       return data;
     })
@@ -33,17 +33,17 @@ export const getGallery = (page = 1) => {
 
 export const postGallery = (data) => {
   return api().request({
-    url:'/gallery',
-    method:'POST',
+    url: '/gallery',
+    method: 'POST',
     headers: {
       'Content-Type': 'multipart/form-data'
     },
     data: data
   })
-  .then(data => {
-    return data
-  })
-  .catch(err => {
-    return err
-  })
+    .then(data => {
+      return data
+    })
+    .catch(err => {
+      return err
+    })
 }
