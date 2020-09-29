@@ -2,7 +2,7 @@ export const opener = {
   brand: 'Powered by Mild Creative',
   bride: 'Ligar',
   groom: 'Aga',
-  description: `Dengan segala kerendahan hati izinkan kami berbagi momen bahagia dalam pernikahan kami.
+  description: `Dengan segala kerendahan hati izinkan kami berbagi momen bahagia dalam pernikahan kami.\n\n
 
   Tanpa mengurangi rasa hormat dalam rangka mengikuti himbauan dari pemerintah terkait pandemi Covid-19, kami hanya melangsungkan acara Akad Nikah yang dihadiri keluarga.
   

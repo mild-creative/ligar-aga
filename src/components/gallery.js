@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {
   Container,
   Typography,
@@ -23,6 +23,7 @@ function Alert(props) {
 
 function Gallery() {
   const classes = useStyles();
+  const galleryRef = useRef(null);
   const [gallery, setGallery] = useState([]);
   const [count, setCount] = useState(1);
   const [formData, setFormData] = useState('');
@@ -102,13 +103,17 @@ function Gallery() {
   }
 
   const onChangePage = (_, page) => {
+    window.scroll({
+      top: galleryRef.current.offsetTop,
+      behavior:'smooth'
+    })
     setPage(page);
     fetchGallery(page);
   }
 
   return (
     <Container className={classes.container}>
-      <Typography className={classes.guestBook}>Guest Gallery</Typography>
+      <Typography innerRef={galleryRef} className={classes.guestBook}>Guest Gallery</Typography>
       <GuestForm
         handleSubmit={handleSubmit}
         loadingSubmit={loadingSubmit}
@@ -130,9 +135,9 @@ function Gallery() {
               </a>
             )}
             {content.type === 'video/mp4' && detect().os == 'Android OS'
-              ? <video poster={VideoThumb} style={{ width: '100%' }} muted src={content.url} playsInline controls className={classes.galleryImg} />
+              ? <video poster={VideoThumb} style={{ width: '100%' }} src={content.url} playsInline controls className={classes.galleryImg} />
               : content.type === 'video/mp4'
-                ? <video preload='metadata' style={{ width: '100%' }} muted src={content.url + '#t=0.1'} playsInline controls className={classes.galleryImg} />
+                ? <video preload='metadata' style={{ width: '100%' }}  src={content.url + '#t=0.1'} playsInline controls className={classes.galleryImg} />
                 : null
             }
             <Typography align="center">{`@${content?.name ?? '-'}`}</Typography>

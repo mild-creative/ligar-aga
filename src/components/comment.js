@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import {
   Container,
   Typography
@@ -11,6 +11,7 @@ import { getComments, postComments } from '../http-request';
 
 function Comment() {
   const classes = useStyles();
+  const myRef = useRef(null)
   const [comments, setComments] = useState([]);
   const [count, setCount] = useState(1);
   const [loadingSubmit, setLoading] = useState(false);
@@ -65,8 +66,8 @@ function Comment() {
   const fetchComments = async (showPage) => {
     setFetchLoading(true);
     try {
-      const allComments = await getComments(showPage);
-      setCount(Math.ceil(allComments?.length / 10));
+      const allComments = await getComments(showPage, 20);
+      setCount(Math.ceil(allComments?.length / 20));
       setComments(allComments?.comment);
     } finally {
       setFetchLoading(false);
@@ -74,13 +75,17 @@ function Comment() {
   }
 
   const onChangePage = (_, page) => {
+    window.scroll({
+      top: myRef.current.offsetTop,
+      behavior: 'smooth'
+    })
     setPage(page);
     fetchComments(page);
   }
 
   return (
     <Container maxWidth="md" className={classes.container}>
-      <Typography className={classes.guestBook}>Guest Book</Typography>
+      <Typography innerRef={myRef} className={classes.guestBook}>Guest Book</Typography>
       <GuestForm
         handleSubmit={handleSubmit}
         loadingSubmit={loadingSubmit}

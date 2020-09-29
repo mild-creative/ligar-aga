@@ -25,17 +25,17 @@ function Admin() {
     const [gallery, setGallery] = useState([]);
     const [loading, setLoading] = useState(false);
     useEffect(() => {
-        fetchComments(1, 1000000);
+        fetchComments(1, 1000);
         fetchGallery(1, 10000000)
     }, [])
     const fetchComments = async (showPage) => {
-        const allComments = await getComments(showPage);
+        const allComments = await getComments(showPage, 10000);
         setComment(allComments?.comment)
 
     }
     const fetchGallery = async (showPage) => {
         try {
-            const galleryContents = await getGallery(showPage);
+            const galleryContents = await getGallery(showPage,10000);
             setGallery(galleryContents?.data?.gallery);
         } finally {
         }

@@ -79,11 +79,11 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   highlightedWord: {
-    fontSize: '80px !important',
+    // fontSize: '80px !important',
     fontWeight: 800,
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '50px !important'
-    }
+    // [theme.breakpoints.down('sm')]: {
+    //   fontSize: '50px !important'
+    // }
   },
   contentCenterer: {
     display: 'flex',

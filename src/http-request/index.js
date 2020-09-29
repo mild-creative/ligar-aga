@@ -1,7 +1,7 @@
 import api from './base-url';
 
 export const getComments = (page = 1, pageSize) => {
-  return api().get('/comment', { params: { page, pageSize } })
+  return api().get('/comment', { params: { page, size: pageSize } })
     .then(({ data }) => {
       return data;
     })
@@ -22,7 +22,7 @@ export const postComments = (data) => {
 }
 
 export const getGallery = (page = 1, pageSize) => {
-  return api().get('/gallery', { params: { page, pageSize } })
+  return api().get('/gallery', { params: { page, size: pageSize } })
     .then(data => {
       return data;
     })

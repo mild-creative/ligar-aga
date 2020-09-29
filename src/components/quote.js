@@ -5,7 +5,7 @@ import useStyles from '../styles/content';
 import { detect } from 'detect-browser';
 import { browser } from '../helpers/browser';
 
-function Quote({ preWord, highlightWord, reverse, quote, img, children, foto }) {
+function Quote({ preWord, highlightWord, reverse, quote, img, children, foto, preHighlight }) {
   const [quoteLoaded, setQuoteLoaded] = React.useState(false);
   const classes = useStyles({
     reverse,
@@ -22,8 +22,8 @@ function Quote({ preWord, highlightWord, reverse, quote, img, children, foto }) 
       <Grid item container sm={12} md={6} justify="center" alignItems="center">
         <Grid item className={classes.wordContainer}>
           <Typography>{preWord}</Typography>
-          <Typography className={classes.highlightedWord}>{highlightWord}</Typography>
-          <Typography>{quote}</Typography>
+          <Typography >{preHighlight} <span className={classes.highlightedWord}>{highlightWord}</span> {quote}</Typography>
+          {/* <Typography>{quote}</Typography> */}
         </Grid>
       </Grid>
       <Grid item sm={12} md={6} className={clsx(classes.contentCenterer, reverse && classes.imageContainer)}>

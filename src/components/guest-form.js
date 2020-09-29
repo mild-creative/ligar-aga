@@ -27,7 +27,7 @@ function GuestForm({
 
   useEffect(() => {
     ValidatorForm.addValidationRule('msgChars', (value) => {
-      if (value.length > 160) {
+      if (value.length > 500) {
         return false;
       }
       return true;

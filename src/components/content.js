@@ -97,17 +97,18 @@ function Content({ open }) {
       </div> */}
       <Container className={classes.outerQuoteContainer} maxWidth={matches ? 'lg' : false}>
         <Quote
-          preWord="The"
-          highlightWord="Highest"
-          quote="Happiness On earth"
+          preWord="Good intention "
+          highlightWord="Grateful"
+          quote="heart"
           img={VideoRight}
           foto={FotoRight}
         />
         <Quote
           reverse={true}
-          preWord="Is The"
-          highlightWord="Happines"
-          quote="Of Marriage"
+          preWord="Everything comes to you"
+          preHighlight = "At"
+          highlightWord="The Best"
+          quote="time"
           img={VideoLeft}
           foto={FotoLeft}
         />

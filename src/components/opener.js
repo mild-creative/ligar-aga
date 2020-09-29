@@ -33,7 +33,16 @@ function Opener({ handleClick }) {
           {`${opener.groom}`}
         </Typography>
         <Typography>
-          {opener.description}
+          Dengan segala kerendahan hati izinkan kami berbagi momen bahagia dalam pernikahan kami.
+        </Typography>
+        <Typography>
+          Tanpa mengurangi rasa hormat dalam rangka mengikuti himbauan dari pemerintah terkait pandemi Covid-19, kami hanya melangsungkan acara Akad Nikah yang dihadiri keluarga.
+        </Typography>
+        <Typography>
+          Semoga Bapak/Ibu, Saudara/i dan Kerabat sekalian dapat memakluminya.
+        </Typography>
+        <Typography>
+          Terima kasih atas doanya.
         </Typography>
         <Button onClick={handleClick} className={classes.buttonOpen}>
           Buka
