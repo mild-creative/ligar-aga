@@ -25,6 +25,7 @@ function Gallery() {
   const classes = useStyles();
   const galleryRef = useRef(null);
   const [gallery, setGallery] = useState([]);
+  const [showGallery,setShowGallery] = useState([]);
   const [count, setCount] = useState(1);
   const [formData, setFormData] = useState('');
   const [file_, setFile] = useState('');
@@ -97,6 +98,8 @@ function Gallery() {
       const galleryContents = await getGallery(showPage);
       setGallery(galleryContents?.data?.gallery);
       setCount(Math.ceil(galleryContents?.data?.length / 10))
+      setShowGallery(galleryContents?.data?.gallery.slice(0, 20));
+
     } finally {
       setFetchLoading(false);
     }
@@ -125,7 +128,7 @@ function Gallery() {
         upload={true}
       />
       <Grid container className={classes.galleryContainer} spacing={2}>
-        {gallery.map(content => (
+        {/* {gallery.map(content => (
           <Grid item xs={6} md={4} lg={3}
             className={classes.eachGallery}
           >
@@ -142,7 +145,7 @@ function Gallery() {
             }
             <Typography align="center">{`@${content?.name ?? '-'}`}</Typography>
           </Grid>
-        ))}
+        ))} */}
       </Grid>
       <Snackbar open={alertErrOpen} autoHideDuration={4000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="error">

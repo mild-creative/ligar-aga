@@ -9,7 +9,7 @@ import Mobile from './reception-mobile';
 
 const calculateTimeLeft = () => {
   // const difference = +new Date("2020-10-04") - +new Date();
-  const difference = +moment('2020-10-04 08:00').tz('Asia/Jakarta') - +moment().tz('Asia/Jakarta')
+  const difference = +moment('2020-10-30 07:00').tz('Asia/Jakarta') - +moment().tz('Asia/Jakarta')
   let timeLeft = {};
 
   if (difference > 0) {

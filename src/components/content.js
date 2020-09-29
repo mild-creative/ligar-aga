@@ -74,13 +74,13 @@ function Content({ open }) {
         containerWidth="100%"
         containerHeight="100%"
       /> */}
-      {
+      {/* {
         browser()
           ? <video preload='auto' autoPlay playsInline loop muted height='100%' width='100%'>
             <source src={BannerVideo} type='video/mp4'></source>
           </video>
           : <img height='100%' width='100%' src={BannerFoto} alt="Banner" />
-      }
+      } */}
       {/* <div className={classes.videoIFContainer}>
         <iframe
           // src={BannerVideo}
@@ -95,7 +95,7 @@ function Content({ open }) {
           className={classes.video}
         />
       </div> */}
-      <Container className={classes.outerQuoteContainer} maxWidth={matches ? 'lg' : false}>
+      {/* <Container className={classes.outerQuoteContainer} maxWidth={matches ? 'lg' : false}>
         <Quote
           preWord="Good intention "
           highlightWord="Grateful"
@@ -112,7 +112,7 @@ function Content({ open }) {
           img={VideoLeft}
           foto={FotoLeft}
         />
-      </Container>
+      </Container> */}
       <DetailReception />
       <Streaming />
       <Comment />

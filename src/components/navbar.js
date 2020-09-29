@@ -9,7 +9,7 @@ function Navbar() {
   return (
     <AppBar color="default" position="static" className={classes.appbar}>
       <Toolbar variant="dense">
-        <Typography align="center" className={classes.brandName}>{`Ligar & Aga`}</Typography>
+        <Typography align="center" className={classes.brandName}>{`Dian & Indra`}</Typography>
       </Toolbar>
       <Typography align="center" className={classes.theWedding}>{`The Wedding`}</Typography>
     </AppBar>

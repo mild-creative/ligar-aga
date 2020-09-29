@@ -1,49 +1,76 @@
-import api from './base-url';
+import moment from 'moment-timezone';
+import { db } from './firebase';
 
-export const getComments = (page = 1, pageSize) => {
-  return api().get('/comment', { params: { page, size: pageSize } })
-    .then(({ data }) => {
-      return data;
+export const getComments = async (Page = 1, PageSize) => {
+  try {
+    const result = await db.collection('comment').orderBy('createdAt', 'desc').get()
+    const length = result.docs.length;
+    const data = []
+    result.forEach(val => {
+      data.push({
+        ...val.data(),
+        id: val.id
+      })
     })
-    .catch((err) => {
-      return err;
-    })
+    return {
+      comment: data,
+      length
+    }
+  } catch (error) {
+    return {
+      msg: 'error while get data',
+      data: error.message
+    }
+  }
 }
 
-export const postComments = (data) => {
-  return api().post('/comment', data)
-    .then(({ data }) => {
-      return data;
-    })
-    .catch((err) => {
-      console.log(err, 'err')
-      return err;
-    })
+export const postComments = async (data) => {
+  try {
+    await db.collection('comment').doc().set({
+      ...data,
+      createdAt: moment().tz('Asia/Jakarta').format()
+    });
+    return data
+  } catch (error) {
+    throw error
+  }
+
 }
 
-export const getGallery = (page = 1, pageSize) => {
-  return api().get('/gallery', { params: { page, size: pageSize } })
-    .then(data => {
-      return data;
+export const getGallery = async (page = 1, pageSize) => {
+  try {
+    const result = await db.collection('gallery').orderBy('createdAt', 'desc').get()
+    const length = result.docs.length;
+    const data = []
+    result.forEach(val => {
+      data.push({
+        ...val.data(),
+        id: val.id
+      })
     })
-    .catch(err => {
-      return err;
-    })
+    return {
+      data: {
+        gallery: data,
+        length
+      }
+    }
+  } catch (error) {
+    return {
+      msg: 'error while get data',
+      data: error.message
+    }
+  }
 }
 
-export const postGallery = (data) => {
-  return api().request({
-    url: '/gallery',
-    method: 'POST',
-    headers: {
-      'Content-Type': 'multipart/form-data'
-    },
-    data: data
-  })
-    .then(data => {
-      return data
-    })
-    .catch(err => {
-      return err
-    })
+export const postGallery = async (data) => {
+  try {
+    await db.collection('gallery').doc().set({
+      ...data,
+      createdAt: moment().tz('Asia/Jakarta').format()
+    });
+    return data
+  } catch (error) {
+    throw error
+  }
+
 }

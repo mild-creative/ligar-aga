@@ -13,6 +13,7 @@ function Comment() {
   const classes = useStyles();
   const myRef = useRef(null)
   const [comments, setComments] = useState([]);
+  const [showComments, setShowComments] = useState([])
   const [count, setCount] = useState(1);
   const [loadingSubmit, setLoading] = useState(false);
   const [alertOpen, setAlertOpen] = useState(false);
@@ -69,6 +70,7 @@ function Comment() {
       const allComments = await getComments(showPage, 20);
       setCount(Math.ceil(allComments?.length / 20));
       setComments(allComments?.comment);
+      setShowComments(allComments?.comment.slice(0, 20));
     } finally {
       setFetchLoading(false);
     }
@@ -80,7 +82,13 @@ function Comment() {
       behavior: 'smooth'
     })
     setPage(page);
-    fetchComments(page);
+    if (page != 1) {
+      const ceil = page * 20;
+      const floor = ceil - 20
+      setShowComments(comments.slice(floor, ceil))
+    } else {
+      setShowComments(comments.slice(0, 20))
+    }
   }
 
   return (
@@ -98,7 +106,7 @@ function Comment() {
       />
       <hr />
       {fetchLoading && <h3>Loading ...</h3>}
-      {!fetchLoading && comments.map((comment) => (
+      {!fetchLoading && showComments.map((comment) => (
         <div key={comment.email}>
           <p>
             <span className={classes.name}>{comment.name} </span>
@@ -108,6 +116,7 @@ function Comment() {
           <hr />
         </div>
       ))}
+
       <Pagination
         count={count}
         variant="outlined"

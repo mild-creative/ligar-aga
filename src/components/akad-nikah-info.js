@@ -13,9 +13,9 @@ function AkadNikah() {
   return (
     <div className={classes.infoIconsTextWrapper}>
       <Typography className={classes.akadNikah}>Akad Nikah</Typography>
-      <Typography><img src={Calendar} alt="map" width="40px" /> Minggu, 4 Oktober 2020</Typography>
-      <Typography><img src={Clock} alt="clock" width="40px" /> 08.00 WIB - Selesai</Typography>
-      <Typography><img src={Pin} alt="calendar" width="40px" /> Teras Dara Bogor, Jawa Barat</Typography>
+      <Typography><img src={Calendar} alt="map" width="40px" /> Jumat, 30 Oktober 2020</Typography>
+      <Typography><img src={Clock} alt="clock" width="40px" /> 07.00 WIB - Selesai</Typography>
+      <Typography><img src={Pin} alt="calendar" width="40px" /> Janglipermai, Semarang</Typography>
     </div>
   );
 }
