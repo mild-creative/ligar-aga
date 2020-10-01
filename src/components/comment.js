@@ -93,7 +93,7 @@ function Comment() {
 
   return (
     <Container maxWidth="md" className={classes.container}>
-      <Typography innerRef={myRef} className={classes.guestBook}>Guest Book</Typography>
+      <Typography innerRef={myRef} className={classes.guestBook}>Buku Tamu</Typography>
       <GuestForm
         handleSubmit={handleSubmit}
         loadingSubmit={loadingSubmit}

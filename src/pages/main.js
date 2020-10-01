@@ -4,7 +4,7 @@ import Opener from '../components/opener';
 import Content from '../components/content';
 
 function Main() {
-  const [openerClosed, setCloseOpener] = useState(false);
+  const [openerClosed, setCloseOpener] = useState(true);
 
   const handleClick = () => {
     setCloseOpener(true);

@@ -3,30 +3,30 @@ import {
   Container,
   useMediaQuery
 } from '@material-ui/core';
-import ReactAudioPlayer from 'react-audio-player';
-import ReactPlayer from 'react-player';
-import ReactVideo from 'react-background-video-player';
+// import ReactAudioPlayer from 'react-audio-player';
+// import ReactPlayer from 'react-player';
+// import ReactVideo from 'react-background-video-player';
 // import Skeleton from '@material-ui/lab/Skeleton';
 import useStyles from '../styles/content';
 
 import Navbar from './navbar';
-import Quote from './quote';
-import Gallery from './gallery';
+// import Quote from './quote';
+// import Gallery from './gallery';
 import Comment from './comment';
 import DetailReception from './detail-reception';
 import Footer from './footer';
 import Streaming from './streaming';
-import FloatingButton from './floating-menu';
+// import FloatingButton from './floating-menu';
 
-import VideoRight from '../assets/right-video.mp4';
-import VideoLeft from '../assets/video-left.mp4';
-import BannerVideo from '../assets/banner.mp4';
-import BannerFoto from '../assets/foto1.jpeg';
-import FotoRight from '../assets/foto2.jpeg';
-import FotoLeft from '../assets/foto3.jpeg';
-import Backsound from '../assets/BACKSOUND_PREWED_AGA.mp3';
-import { browser } from '../helpers/browser';
-import Poster from '../assets/official-icon.jpeg';
+// import VideoRight from '../assets/right-video.mp4';
+// import VideoLeft from '../assets/video-left.mp4';
+// import BannerVideo from '../assets/banner.mp4';
+// import BannerFoto from '../assets/foto1.jpeg';
+// import FotoRight from '../assets/foto2.jpeg';
+// import FotoLeft from '../assets/foto3.jpeg';
+// import Backsound from '../assets/BACKSOUND_PREWED_AGA.mp3';
+// import { browser } from '../helpers/browser';
+// import Poster from '../assets/official-icon.jpeg';
 
 function Content({ open }) {
   const matches = useMediaQuery(theme => theme.breakpoints.up('md'));
@@ -43,7 +43,7 @@ function Content({ open }) {
   return (
     <>
       <Navbar />
-      <ReactAudioPlayer
+      {/* <ReactAudioPlayer
         src={Backsound}
         autoPlay
         loop
@@ -51,8 +51,8 @@ function Content({ open }) {
       />
       <FloatingButton
         mute={mute}
-        setMute={setMute}
-      />
+        setMute={setMute} */}
+      {/* /> */}
       {/* <Skeleton variant="rect" animation="wave" className={classes.bannerLoader} />
       <video ref={videoRef} className={classes.banner} onLoadedData={onLoaded} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video> */}
       {/* <video poster={Poster} id="banner" width="100%" height="100%" loop autoPlay='autoplay' muted src={BannerVideo} playsInline webkit-playsInline></video> */}
@@ -116,7 +116,7 @@ function Content({ open }) {
       <DetailReception />
       <Streaming />
       <Comment />
-      <Gallery />
+      {/* <Gallery /> */}
       <Footer />
     </>
   );

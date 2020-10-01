@@ -70,7 +70,7 @@ function GuestForm({
         <>
           <div>
             <TextValidator
-              label="Guest Name"
+              label="Nama Tamu"
               id="name"
               size="small"
               type="text"
@@ -83,7 +83,7 @@ function GuestForm({
           </div>
           <div>
             <TextValidator
-              label="Who Am I"
+              label="Tamu Dari"
               id="whoAmI"
               size="small"
               type="text"
@@ -96,7 +96,7 @@ function GuestForm({
           </div>
           <div>
             <TextValidator
-              label="Message"
+              label="Pesan"
               id="msg"
               size="small"
               type="text"
