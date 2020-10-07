@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import Detail from './wedding-detail';
 import Reception from './reception';
+import bg from '../assets/bg2.jpg';
 
 function DetailReception() {
   const classes = useStyles();
@@ -18,7 +19,10 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: '2.5rem',
     paddingBottom: '2.5rem',
     // backgroundImage: 'linear-gradient(to bottom, rgba(209, 179, 101, 1), rgba(93, 72, 16, 1))',
-    backgroundImage: 'linear-gradient(to bottom, rgb(211, 175, 164), rgb(211, 175, 164))',
+    backgroundImage: `url(${bg})`,
+    // backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
     // backgroundImage: 'rgb(234, 230, 225)',
     // color: '#FFFFFF'
   }

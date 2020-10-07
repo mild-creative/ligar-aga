@@ -6,8 +6,8 @@ import {
 } from '@material-ui/core';
 import useStyles from '../styles/detail';
 
-import Groom from '../assets/indra.jpeg';
-import Bride from '../assets/dian.jpeg';
+import Groom from '../assets/cowo.png';
+import Bride from '../assets/cewe.png';
 
 function WeddingDetail() {
   const classes = useStyles();

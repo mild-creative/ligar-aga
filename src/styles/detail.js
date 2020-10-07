@@ -24,8 +24,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '2rem',
     marginBottom: '2rem',
     '& img': {
-      borderRadius: '50%',
-      border: '2px solid white',
+      // borderRadius: '50%',
+      // border: '2px solid white',
+      // margin:2,
       width: 240,
       height: 'intrinsic',
       [theme.breakpoints.down('sm')]: {
