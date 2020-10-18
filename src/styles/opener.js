@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
   brandName: {
     color: '#000000',
     fontFamily: `'Halimun', cursive`,
-    fontSize: '20px'
+    fontSize: '30px'
   },
   theWedding: {
     letterSpacing: '15px',

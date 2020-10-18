@@ -2,7 +2,6 @@ import React from 'react';
 
 import useStyles from '../styles/youtube-thumbnail';
 import PlayButton from '../assets/youtube.svg';
-import PlayButtonGrey from '../assets/youtube-grey.svg';
 
 function YoutubeThumb() {
   const classes = useStyles();

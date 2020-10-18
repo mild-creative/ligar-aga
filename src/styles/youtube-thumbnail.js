@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import Ytb from '../assets/thumbnail-ytb.jpg';
+import Ytb from '../assets/Thumbnail.jpg';
 
 const useStyles = makeStyles((theme) => ({
   container: {

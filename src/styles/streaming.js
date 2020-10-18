@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   profileName: {
     fontFamily: `'Satisfy', cursive`,
-    fontSize: '35px',
+    fontSize: '50px',
     marginBottom: '1rem',
     marginTop: '2.5rem'
   },
